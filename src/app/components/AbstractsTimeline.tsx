@@ -1,5 +1,3 @@
-import React from "react";
-
 const TIMELINE_ITEMS = [
   {
     id: 1,
@@ -66,80 +64,27 @@ const TIMELINE_ITEMS = [
 
 export function AbstractsTimeline() {
   return (
-    <section
-      id="timeline"
-      style={{
-        backgroundColor: "#fafafa",
-        padding: "96px 0",
-        fontFamily: "'Inter', sans-serif",
-      }}
-    >
-      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 2rem" }}>
+    <section id="timeline" className="bg-bg-alt py-24 font-sans">
+      <div className="max-w-[1280px] mx-auto px-8">
         {/* Section header */}
-        <div style={{ textAlign: "center", marginBottom: "60px" }}>
-          <p
-            style={{
-              fontSize: "11px",
-              fontWeight: 700,
-              color: "#2ECC71",
-              letterSpacing: "1.2px",
-              textTransform: "uppercase",
-              marginBottom: "10px",
-            }}
-          >
+        <div className="text-center mb-[60px]">
+          <p className="text-[11px] font-bold text-primary tracking-[1.2px] uppercase mb-2.5">
             Call for Abstracts
           </p>
-          <h2
-            style={{
-              fontSize: "clamp(1.7rem, 3vw, 2.5rem)",
-              fontWeight: 800,
-              color: "#0a1a0e",
-              letterSpacing: "-0.5px",
-              marginBottom: "14px",
-              fontFamily: "'Montserrat', sans-serif",
-            }}
-          >
+          <h2 className="text-[clamp(1.7rem,3vw,2.5rem)] font-extrabold text-text-main tracking-[-0.5px] mb-3.5 font-heading">
             Submission Timeline
           </h2>
-          <p
-            style={{
-              fontSize: "0.93rem",
-              color: "#6b7280",
-              maxWidth: "560px",
-              margin: "0 auto",
-              lineHeight: 1.7,
-            }}
-          >
+          <p className="text-[0.93rem] text-text-muted max-w-[560px] mx-auto leading-[1.7]">
             The conference welcomes original, previously unpublished work from
             researchers, practitioners, academics, and students. Accepted papers
             will receive feedback to support post-conference publication.
           </p>
         </div>
 
-        {/* Timeline steps — horizontal on desktop, vertical on mobile */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(5, 1fr)",
-            gap: "0",
-            position: "relative",
-            marginBottom: "48px",
-          }}
-          className="timeline-grid"
-        >
+        {/* Timeline steps */}
+        <div className="relative grid grid-cols-5 gap-0 mb-12 max-[820px]:grid-cols-2 max-[820px]:gap-5 max-[400px]:grid-cols-1">
           {/* Connector line */}
-          <div
-            style={{
-              position: "absolute",
-              top: "28px",
-              left: "calc(10%)",
-              right: "calc(10%)",
-              height: "2px",
-              backgroundColor: "#d1fae5",
-              zIndex: 0,
-            }}
-            className="timeline-connector"
-          />
+          <div className="absolute top-7 left-[10%] right-[10%] h-0.5 bg-primary-faint z-0 max-[820px]:hidden" />
 
           {TIMELINE_ITEMS.map((item) => (
             <TimelineStep key={item.id} item={item} />
@@ -147,33 +92,10 @@ export function AbstractsTimeline() {
         </div>
 
         {/* Context note + CTA */}
-        <div
-          style={{
-            maxWidth: "680px",
-            margin: "0 auto",
-            textAlign: "center",
-          }}
-        >
-          <div
-            style={{
-              backgroundColor: "#ffffff",
-              border: "1px solid #e5e7eb",
-              borderLeft: "4px solid #2ECC71",
-              borderRadius: "0 10px 10px 0",
-              padding: "18px 22px",
-              marginBottom: "32px",
-              textAlign: "left",
-            }}
-          >
-            <p
-              style={{
-                fontSize: "0.87rem",
-                color: "#4b5563",
-                lineHeight: 1.7,
-                margin: 0,
-              }}
-            >
-              <strong style={{ color: "#155724" }}>Publication pathway:</strong>{" "}
+        <div className="max-w-[680px] mx-auto text-center">
+          <div className="bg-white border border-border-default border-l-4 border-l-primary rounded-r-[10px] px-[22px] py-[18px] mb-8 text-left">
+            <p className="text-[0.87rem] text-text-light leading-[1.7] m-0">
+              <strong className="text-primary-dark">Publication pathway:</strong>{" "}
               The conference welcomes original, previously unpublished work from
               researchers, practitioners, academics, and students. Accepted
               papers will receive feedback to support post-conference
@@ -185,43 +107,9 @@ export function AbstractsTimeline() {
             href="https://forms.gle/p8GGUnL6QCdrogsi8"
             target="_blank"
             rel="noopener noreferrer"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "10px",
-              backgroundColor: "#155724",
-              color: "#ffffff",
-              padding: "14px 30px",
-              borderRadius: "8px",
-              textDecoration: "none",
-              fontSize: "14.5px",
-              fontWeight: 700,
-              boxShadow: "0 4px 18px rgba(21,87,36,0.22)",
-              transition: "all 0.2s ease",
-            }}
-            onMouseEnter={(e) => {
-              const el = e.currentTarget;
-              el.style.backgroundColor = "#0f3d1a";
-              el.style.transform = "translateY(-2px)";
-              el.style.boxShadow = "0 8px 26px rgba(21,87,36,0.3)";
-            }}
-            onMouseLeave={(e) => {
-              const el = e.currentTarget;
-              el.style.backgroundColor = "#155724";
-              el.style.transform = "translateY(0)";
-              el.style.boxShadow = "0 4px 18px rgba(21,87,36,0.22)";
-            }}
+            className="inline-flex items-center gap-2.5 bg-primary-dark text-white px-[30px] py-3.5 rounded-lg no-underline text-[14.5px] font-bold shadow-[0_4px_18px_rgba(21,87,36,0.22)] transition-all duration-200 hover:bg-[#0f3d1a] hover:-translate-y-0.5 hover:shadow-[0_8px_26px_rgba(21,87,36,0.3)]"
           >
-            <svg
-              width="17"
-              height="17"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
               <polyline points="14 2 14 8 20 8" />
               <line x1="16" y1="13" x2="8" y2="13" />
@@ -229,16 +117,7 @@ export function AbstractsTimeline() {
               <polyline points="10 9 9 9 8 9" />
             </svg>
             Go to Google Form Submission
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
               <polyline points="15 3 21 3 21 9" />
               <line x1="10" y1="14" x2="21" y2="3" />
@@ -246,73 +125,26 @@ export function AbstractsTimeline() {
           </a>
         </div>
       </div>
-
-      <style>{`
-        @media (max-width: 820px) {
-          .timeline-grid {
-            grid-template-columns: repeat(2, 1fr) !important;
-            gap: 20px !important;
-          }
-          .timeline-connector { display: none !important; }
-        }
-        @media (max-width: 400px) {
-          .timeline-grid {
-            grid-template-columns: 1fr !important;
-            gap: 20px !important;
-          }
-          .timeline-connector { display: none !important; }
-        }
-      `}</style>
     </section>
   );
 }
 
-function TimelineStep({
-  item,
-}: {
-  item: {
-    id: number;
-    date: string;
-    label: string;
-    description: string;
-    type: string;
-    round: string;
-    color: string;
-    bg: string;
-    border: string;
-    isMain?: boolean;
-  };
-}) {
+function TimelineStep({ item }: { item: (typeof TIMELINE_ITEMS)[number] }) {
+  const nodeColor = item.isMain ? "#155724" : item.color;
+  const nodeBorder = item.isMain ? "#2ECC71" : "#ffffff";
+  const nodeShadow = item.isMain
+    ? "0 0 0 4px rgba(21,87,36,0.15), 0 4px 16px rgba(21,87,36,0.25)"
+    : `0 0 0 3px ${item.color}22, 0 2px 10px ${item.color}33`;
+
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        textAlign: "center",
-        padding: "0 12px",
-        position: "relative",
-        zIndex: 1,
-      }}
-      className="timeline-step"
-    >
+    <div className="flex flex-col items-center text-center px-3 relative z-10">
       {/* Node dot */}
       <div
+        className="w-14 h-14 rounded-full border-4 border-white flex items-center justify-center mb-4 shrink-0 transition-transform duration-200 hover:scale-110"
         style={{
-          width: "56px",
-          height: "56px",
-          borderRadius: "50%",
-          backgroundColor: item.isMain ? "#155724" : item.color,
-          border: `4px solid ${item.isMain ? "#2ECC71" : "#ffffff"}`,
-          boxShadow: item.isMain
-            ? `0 0 0 4px rgba(21,87,36,0.15), 0 4px 16px rgba(21,87,36,0.25)`
-            : `0 0 0 3px ${item.color}22, 0 2px 10px ${item.color}33`,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          marginBottom: "16px",
-          flexShrink: 0,
-          transition: "transform 0.2s ease",
+          backgroundColor: nodeColor,
+          borderColor: nodeBorder,
+          boxShadow: nodeShadow,
         }}
       >
         {item.type === "submission" ? (
@@ -339,18 +171,11 @@ function TimelineStep({
 
       {/* Round badge */}
       <span
+        className="inline-block text-[9.5px] font-bold tracking-[0.7px] uppercase px-2 py-0.5 rounded-full mb-[7px] border"
         style={{
-          display: "inline-block",
           backgroundColor: `${item.color}18`,
-          border: `1px solid ${item.color}44`,
+          borderColor: `${item.color}44`,
           color: item.color === "#155724" ? "#155724" : item.color,
-          fontSize: "9.5px",
-          fontWeight: 700,
-          letterSpacing: "0.7px",
-          textTransform: "uppercase",
-          padding: "2px 8px",
-          borderRadius: "100px",
-          marginBottom: "7px",
         }}
       >
         {item.round}
@@ -358,40 +183,19 @@ function TimelineStep({
 
       {/* Date */}
       <p
-        style={{
-          fontSize: "12px",
-          fontWeight: 700,
-          color: item.color === "#155724" ? "#155724" : item.color,
-          marginBottom: "5px",
-          letterSpacing: "0.2px",
-        }}
+        className="text-xs font-bold mb-1 tracking-[0.2px]"
+        style={{ color: item.color === "#155724" ? "#155724" : item.color }}
       >
         {item.date}
       </p>
 
       {/* Label */}
-      <p
-        style={{
-          fontSize: "12.5px",
-          fontWeight: 700,
-          color: "#0a1a0e",
-          marginBottom: "6px",
-          lineHeight: 1.3,
-          fontFamily: "'Montserrat', sans-serif",
-        }}
-      >
+      <p className="text-[12.5px] font-bold text-text-main mb-1.5 leading-[1.3] font-heading">
         {item.label}
       </p>
 
       {/* Description */}
-      <p
-        style={{
-          fontSize: "11.5px",
-          color: "#6b7280",
-          lineHeight: 1.6,
-          maxWidth: "180px",
-        }}
-      >
+      <p className="text-[11.5px] text-text-muted leading-[1.6] max-w-[180px]">
         {item.description}
       </p>
     </div>

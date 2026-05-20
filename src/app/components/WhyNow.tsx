@@ -1,5 +1,3 @@
-import React from "react";
-
 const CARDS = [
   {
     id: 1,
@@ -66,64 +64,19 @@ const CARDS = [
 
 export function WhyNow() {
   return (
-    <section
-      id="about"
-      style={{
-        backgroundColor: "#ffffff",
-        padding: "96px 0",
-        fontFamily: "'Inter', sans-serif",
-      }}
-    >
-      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 2rem" }}>
+    <section id="about" className="bg-white py-24 font-sans">
+      <div className="max-w-[1280px] mx-auto px-8">
         {/* Section header */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            marginBottom: "56px",
-            flexWrap: "wrap",
-          }}
-        >
+        <div className="flex flex-col items-center mb-14 flex-wrap">
           <div>
-            <p
-              style={{
-                fontSize: "11px",
-                fontWeight: 700,
-                color: "#2ECC71",
-                letterSpacing: "1.2px",
-                textTransform: "uppercase",
-                textAlign: "center",
-                marginBottom: "10px",
-              }}
-            >
+            <p className="text-[11px] font-bold text-primary tracking-[1.2px] uppercase text-center mb-2.5">
               Why Attend
             </p>
-            <h2
-              style={{
-                fontSize: "clamp(1.7rem, 3vw, 2.5rem)",
-                fontWeight: 800,
-                color: "#0a1a0e",
-                letterSpacing: "-0.5px",
-                lineHeight: 1.15,
-                textAlign: "center",
-                fontFamily: "'Montserrat', sans-serif",
-                maxWidth: "460px",
-              }}
-            >
+            <h2 className="text-[clamp(1.7rem,3vw,2.5rem)] font-extrabold text-text-main tracking-[-0.5px] leading-[1.15] text-center font-heading max-w-[460px]">
               The Mission Behind the Conference
             </h2>
           </div>
-          <p
-            style={{
-              fontSize: "0.93rem",
-              color: "#6b7280",
-              lineHeight: 1.75,
-              paddingTop: "4px",
-              maxWidth: "460px",
-              textAlign: "center",
-            }}
-          >
+          <p className="text-[0.93rem] text-text-muted leading-[1.75] pt-1 max-w-[460px] text-center">
             The 2nd CCECC Conference exists to close a critical gap between
             research and reality — bringing local expertise into the rooms where
             energy decisions are made.
@@ -131,94 +84,48 @@ export function WhyNow() {
         </div>
 
         {/* Cards */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: "24px",
-          }}
-        >
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6">
           {CARDS.map((card) => (
             <div
               key={card.id}
+              className="relative rounded-[14px] p-9 px-8 overflow-hidden transition-all duration-[250ms] cursor-default hover:-translate-y-1"
               style={{
-                position: "relative",
                 backgroundColor: card.bgColor,
                 border: `1px solid ${card.borderColor}`,
-                borderRadius: "14px",
-                padding: "36px 32px",
-                overflow: "hidden",
-                transition: "all 0.25s ease",
-                cursor: "default",
               }}
               onMouseEnter={(e) => {
-                const el = e.currentTarget;
-                el.style.transform = "translateY(-5px)";
-                el.style.boxShadow = `0 16px 44px ${card.accentColor}1a`;
+                (e.currentTarget as HTMLDivElement).style.boxShadow = `0 16px 44px ${card.accentColor}1a`;
               }}
               onMouseLeave={(e) => {
-                const el = e.currentTarget;
-                el.style.transform = "translateY(0)";
-                el.style.boxShadow = "none";
+                (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
               }}
             >
               {/* Large background number */}
               <div
-                style={{
-                  position: "absolute",
-                  top: "16px",
-                  right: "20px",
-                  fontSize: "5rem",
-                  fontWeight: 900,
-                  color: card.numberColor,
-                  opacity: 0.35,
-                  lineHeight: 1,
-                  fontFamily: "'Montserrat', sans-serif",
-                  userSelect: "none",
-                }}
+                className="absolute top-4 right-5 text-[5rem] font-black leading-none font-heading select-none"
+                style={{ color: card.numberColor, opacity: 0.35 }}
               >
                 {card.number}
               </div>
 
               {/* Icon */}
-              <div style={{ marginBottom: "18px" }}>{card.icon}</div>
+              <div className="mb-[18px]">{card.icon}</div>
 
               {/* Label */}
               <p
-                style={{
-                  fontSize: "10.5px",
-                  fontWeight: 700,
-                  color: card.accentColor,
-                  letterSpacing: "1px",
-                  textTransform: "uppercase",
-                  marginBottom: "7px",
-                }}
+                className="text-[10.5px] font-bold tracking-[1px] uppercase mb-[7px]"
+                style={{ color: card.accentColor }}
               >
                 {card.label}
               </p>
 
               {/* Title */}
-              <h3
-                style={{
-                  fontSize: "1.15rem",
-                  fontWeight: 700,
-                  color: "#0a1a0e",
-                  marginBottom: "12px",
-                  fontFamily: "'Montserrat', sans-serif",
-                  lineHeight: 1.3,
-                }}
-              >
+              <h3 className="text-[1.15rem] font-bold text-text-main mb-3 font-heading leading-[1.3]">
                 {card.title}
               </h3>
 
               {/* Description */}
-              <p
-                style={{
-                  fontSize: "0.88rem",
-                  color: "#4b5563",
-                  lineHeight: 1.75,
-                }}
-              >
+              <p className="text-[0.88rem] text-text-light leading-[1.75]">
                 {card.description}
               </p>
             </div>

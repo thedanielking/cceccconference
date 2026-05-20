@@ -1,68 +1,12 @@
 const SPEAKERS = [
-  {
-    id: 1,
-    name: "Prof. Aisha Bello",
-    title: "Director, Renewable Energy Research",
-    affiliation: "University of Lagos",
-    initials: "AB",
-    color: "#155724",
-  },
-  {
-    id: 2,
-    name: "Dr. Emeka Okafor",
-    title: "Head of Energy Policy",
-    affiliation: "Federal Ministry of Power",
-    initials: "EO",
-    color: "#2ECC71",
-  },
-  {
-    id: 3,
-    name: "Dr. Funmilayo Adeyemi",
-    title: "Sustainable Energy Lead",
-    affiliation: "University of Ibadan",
-    initials: "FA",
-    color: "#1a8a4a",
-  },
-  {
-    id: 4,
-    name: "Prof. Chidi Nwachukwu",
-    title: "Chair, Environmental Studies",
-    affiliation: "University of Nigeria, Nsukka",
-    initials: "CN",
-    color: "#0f6630",
-  },
-  {
-    id: 5,
-    name: "Ms. Zainab Musa",
-    title: "Climate Finance Specialist",
-    affiliation: "African Development Bank",
-    initials: "ZM",
-    color: "#27ae60",
-  },
-  {
-    id: 6,
-    name: "Engr. Tunde Rasheed",
-    title: "Solar Systems Engineer",
-    affiliation: "Ahmadu Bello University",
-    initials: "TR",
-    color: "#155724",
-  },
-  {
-    id: 7,
-    name: "Dr. Ngozi Eze",
-    title: "Executive Director",
-    affiliation: "Clean Energy Initiative NG",
-    initials: "NE",
-    color: "#2ECC71",
-  },
-  {
-    id: 8,
-    name: "Prof. Babatunde Fashola",
-    title: "Energy Regulatory Expert",
-    affiliation: "Covenant University",
-    initials: "BF",
-    color: "#1a8a4a",
-  },
+  { id: 1, name: "Prof. Aisha Bello", title: "Director, Renewable Energy Research", affiliation: "University of Lagos", initials: "AB", color: "#155724" },
+  { id: 2, name: "Dr. Emeka Okafor", title: "Head of Energy Policy", affiliation: "Federal Ministry of Power", initials: "EO", color: "#2ECC71" },
+  { id: 3, name: "Dr. Funmilayo Adeyemi", title: "Sustainable Energy Lead", affiliation: "University of Ibadan", initials: "FA", color: "#1a8a4a" },
+  { id: 4, name: "Prof. Chidi Nwachukwu", title: "Chair, Environmental Studies", affiliation: "University of Nigeria, Nsukka", initials: "CN", color: "#0f6630" },
+  { id: 5, name: "Ms. Zainab Musa", title: "Climate Finance Specialist", affiliation: "African Development Bank", initials: "ZM", color: "#27ae60" },
+  { id: 6, name: "Engr. Tunde Rasheed", title: "Solar Systems Engineer", affiliation: "Ahmadu Bello University", initials: "TR", color: "#155724" },
+  { id: 7, name: "Dr. Ngozi Eze", title: "Executive Director", affiliation: "Clean Energy Initiative NG", initials: "NE", color: "#2ECC71" },
+  { id: 8, name: "Prof. Babatunde Fashola", title: "Energy Regulatory Expert", affiliation: "Covenant University", initials: "BF", color: "#1a8a4a" },
 ];
 
 const LOGOS = [
@@ -76,135 +20,40 @@ const LOGOS = [
 
 export function SpeakerGallery() {
   return (
-    <section
-      id="speakers"
-      style={{
-        backgroundColor: "#ffffff",
-        padding: "100px 0",
-        fontFamily: "'Inter', sans-serif",
-      }}
-    >
-      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 2rem" }}>
+    <section id="speakers" className="bg-white py-[100px] font-sans">
+      <div className="max-w-[1280px] mx-auto px-8">
         {/* Section Header */}
-        <div style={{ textAlign: "center", marginBottom: "64px" }}>
-          <div
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "8px",
-              backgroundColor: "#f0fff4",
-              border: "1px solid #2ECC71",
-              borderRadius: "100px",
-              padding: "6px 16px",
-              marginBottom: "20px",
-            }}
-          >
-            <span
-              style={{
-                fontSize: "11px",
-                fontWeight: 700,
-                color: "#155724",
-                letterSpacing: "1px",
-                textTransform: "uppercase",
-              }}
-            >
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 bg-primary-light border border-primary rounded-full px-4 py-1.5 mb-5">
+            <span className="text-[11px] font-bold text-primary-dark tracking-[1px] uppercase">
               Committee & Speakers
             </span>
           </div>
-          <h2
-            style={{
-              fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
-              fontWeight: 800,
-              color: "#0d2e17",
-              letterSpacing: "-0.5px",
-              marginBottom: "16px",
-              fontFamily: "'Montserrat', sans-serif",
-            }}
-          >
+          <h2 className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-extrabold text-[#0d2e17] tracking-[-0.5px] mb-4 font-heading">
             Voices of Authority
           </h2>
-          <p
-            style={{
-              fontSize: "1.05rem",
-              color: "#5a7a62",
-              maxWidth: "520px",
-              margin: "0 auto",
-              lineHeight: 1.7,
-            }}
-          >
-            Our organizing committee and speakers represent Nigeria's leading
-            academic institutions, government ministries, and development
-            organizations.
+          <p className="text-[1.05rem] text-[#5a7a62] max-w-[520px] mx-auto leading-[1.7]">
+            Our organizing committee and speakers represent Nigeria's leading academic institutions, government ministries, and development organizations.
           </p>
         </div>
 
         {/* Speaker Grid */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
-            gap: "24px",
-            marginBottom: "72px",
-          }}
-        >
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] gap-6 mb-[72px]">
           {SPEAKERS.map((speaker) => (
             <SpeakerCard key={speaker.id} speaker={speaker} />
           ))}
         </div>
 
         {/* Affiliation Logos Row */}
-        <div
-          style={{
-            borderTop: "1px solid #e8f5e9",
-            paddingTop: "48px",
-            textAlign: "center",
-          }}
-        >
-          <p
-            style={{
-              fontSize: "12px",
-              fontWeight: 600,
-              color: "#9ca3af",
-              letterSpacing: "1px",
-              textTransform: "uppercase",
-              marginBottom: "28px",
-            }}
-          >
+        <div className="border-t border-primary-faint pt-12 text-center">
+          <p className="text-xs font-semibold text-text-faint tracking-[1px] uppercase mb-7">
             Partnering Institutions
           </p>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              gap: "16px",
-              flexWrap: "wrap",
-            }}
-          >
+          <div className="flex justify-center items-center gap-4 flex-wrap">
             {LOGOS.map((logo) => (
               <div
                 key={logo.name}
-                style={{
-                  padding: "10px 22px",
-                  border: "1px solid #d1fae5",
-                  borderRadius: "8px",
-                  backgroundColor: "#f9fffe",
-                  fontSize: "13px",
-                  fontWeight: 700,
-                  color: "#155724",
-                  letterSpacing: "0.5px",
-                  transition: "all 0.2s ease",
-                }}
-                onMouseEnter={(e) => {
-                  const el = e.currentTarget;
-                  el.style.backgroundColor = "#f0fff4";
-                  el.style.borderColor = "#2ECC71";
-                }}
-                onMouseLeave={(e) => {
-                  const el = e.currentTarget;
-                  el.style.backgroundColor = "#f9fffe";
-                  el.style.borderColor = "#d1fae5";
-                }}
+                className="px-[22px] py-2.5 border border-primary-faint rounded-lg bg-[#f9fffe] text-[13px] font-bold text-primary-dark tracking-[0.5px] transition-all duration-200 hover:bg-primary-light hover:border-primary"
               >
                 {logo.abbr}
               </div>
@@ -218,84 +67,26 @@ export function SpeakerGallery() {
 
 function SpeakerCard({ speaker }: { speaker: (typeof SPEAKERS)[number] }) {
   return (
-    <div
-      style={{
-        backgroundColor: "#ffffff",
-        border: "1px solid #e8f5e9",
-        borderRadius: "16px",
-        padding: "28px 24px",
-        textAlign: "center",
-        transition: "all 0.25s ease",
-        cursor: "default",
-      }}
-      onMouseEnter={(e) => {
-        const el = e.currentTarget;
-        el.style.transform = "translateY(-5px)";
-        el.style.boxShadow = "0 12px 36px rgba(21,87,36,0.1)";
-        el.style.borderColor = "#2ECC71";
-      }}
-      onMouseLeave={(e) => {
-        const el = e.currentTarget;
-        el.style.transform = "translateY(0)";
-        el.style.boxShadow = "none";
-        el.style.borderColor = "#e8f5e9";
-      }}
-    >
+    <div className="bg-white border border-primary-faint rounded-2xl p-7 px-6 text-center transition-all duration-[250ms] cursor-default hover:-translate-y-[5px] hover:shadow-[0_12px_36px_rgba(21,87,36,0.1)] hover:border-primary">
       {/* Avatar */}
       <div
+        className="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center text-[1.3rem] font-bold text-white font-heading border-[3px]"
         style={{
-          width: "80px",
-          height: "80px",
-          borderRadius: "50%",
           backgroundColor: speaker.color,
-          margin: "0 auto 16px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          border: `3px solid ${speaker.color}33`,
+          borderColor: `${speaker.color}33`,
           boxShadow: `0 0 0 5px ${speaker.color}11`,
-          fontSize: "1.3rem",
-          fontWeight: 700,
-          color: "#ffffff",
-          fontFamily: "'Montserrat', sans-serif",
         }}
       >
         {speaker.initials}
       </div>
 
-      <div
-        style={{
-          fontSize: "0.95rem",
-          fontWeight: 700,
-          color: "#0d2e17",
-          marginBottom: "4px",
-          fontFamily: "'Montserrat', sans-serif",
-        }}
-      >
+      <div className="text-[0.95rem] font-bold text-[#0d2e17] mb-1 font-heading">
         {speaker.name}
       </div>
-      <div
-        style={{
-          fontSize: "0.8rem",
-          color: "#6b7280",
-          marginBottom: "8px",
-          lineHeight: 1.4,
-        }}
-      >
+      <div className="text-[0.8rem] text-text-muted mb-2 leading-[1.4]">
         {speaker.title}
       </div>
-      <div
-        style={{
-          display: "inline-block",
-          backgroundColor: "#f0fff4",
-          border: "1px solid #d1fae5",
-          borderRadius: "100px",
-          padding: "3px 12px",
-          fontSize: "11px",
-          fontWeight: 600,
-          color: "#155724",
-        }}
-      >
+      <div className="inline-block bg-primary-light border border-primary-faint rounded-full px-3 py-[3px] text-[11px] font-semibold text-primary-dark">
         {speaker.affiliation}
       </div>
     </div>

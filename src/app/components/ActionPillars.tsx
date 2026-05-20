@@ -1,5 +1,3 @@
-import React from "react";
-
 const PILLARS = [
   {
     id: 1,
@@ -102,50 +100,17 @@ const PILLARS = [
 
 export function ActionPillars() {
   return (
-    <section
-      id="pillars"
-      style={{
-        backgroundColor: "#ffffff",
-        padding: "96px 0",
-        fontFamily: "'Inter', sans-serif",
-      }}
-    >
-      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 2rem" }}>
+    <section id="pillars" className="bg-white py-24 font-sans">
+      <div className="max-w-[1280px] mx-auto px-8">
         {/* Section header */}
-        <div style={{ textAlign: "center", marginBottom: "56px" }}>
-          <p
-            style={{
-              fontSize: "11px",
-              fontWeight: 700,
-              color: "#2ECC71",
-              letterSpacing: "1.2px",
-              textTransform: "uppercase",
-              marginBottom: "10px",
-            }}
-          >
+        <div className="text-center mb-14">
+          <p className="text-[11px] font-bold text-primary tracking-[1.2px] uppercase mb-2.5">
             Conference Sub-Themes
           </p>
-          <h2
-            style={{
-              fontSize: "clamp(1.7rem, 3vw, 2.5rem)",
-              fontWeight: 800,
-              color: "#0a1a0e",
-              letterSpacing: "-0.5px",
-              marginBottom: "14px",
-              fontFamily: "'Montserrat', sans-serif",
-            }}
-          >
+          <h2 className="text-[clamp(1.7rem,3vw,2.5rem)] font-extrabold text-text-main tracking-[-0.5px] mb-3.5 font-heading">
             7 Action Pillars
           </h2>
-          <p
-            style={{
-              fontSize: "0.93rem",
-              color: "#6b7280",
-              maxWidth: "500px",
-              margin: "0 auto",
-              lineHeight: 1.7,
-            }}
-          >
+          <p className="text-[0.93rem] text-text-muted max-w-[500px] mx-auto leading-[1.7]">
             The conference is structured around seven interconnected sub-themes,
             each addressing a critical dimension of clean energy and climate
             action in Sub-Saharan Africa.
@@ -153,13 +118,7 @@ export function ActionPillars() {
         </div>
 
         {/* Grid */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
-            gap: "20px",
-          }}
-        >
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-5">
           {PILLARS.map((pillar) => (
             <PillarCard key={pillar.id} pillar={pillar} />
           ))}
@@ -169,93 +128,24 @@ export function ActionPillars() {
   );
 }
 
-function PillarCard({
-  pillar,
-}: {
-  pillar: (typeof PILLARS)[number];
-}) {
+function PillarCard({ pillar }: { pillar: (typeof PILLARS)[number] }) {
   return (
-    <div
-      style={{
-        backgroundColor: "#ffffff",
-        border: "1px solid #e5e7eb",
-        borderRadius: "12px",
-        padding: "28px 26px",
-        display: "flex",
-        flexDirection: "column",
-        gap: "12px",
-        transition: "all 0.22s ease",
-        cursor: "default",
-        position: "relative",
-        overflow: "hidden",
-      }}
-      onMouseEnter={(e) => {
-        const el = e.currentTarget;
-        el.style.borderColor = "#2ECC71";
-        el.style.transform = "translateY(-4px)";
-        el.style.boxShadow = "0 12px 36px rgba(21,87,36,0.1)";
-        el.style.backgroundColor = "#f9fffe";
-      }}
-      onMouseLeave={(e) => {
-        const el = e.currentTarget;
-        el.style.borderColor = "#e5e7eb";
-        el.style.transform = "translateY(0)";
-        el.style.boxShadow = "none";
-        el.style.backgroundColor = "#ffffff";
-      }}
-    >
-      {/* Pillar number — top right */}
-      <div
-        style={{
-          position: "absolute",
-          top: "16px",
-          right: "18px",
-          fontSize: "11px",
-          fontWeight: 700,
-          color: "#d1fae5",
-          letterSpacing: "0.5px",
-          fontFamily: "'Montserrat', sans-serif",
-        }}
-      >
+    <div className="bg-white border border-border-default rounded-xl p-7 px-[26px] flex flex-col gap-3 transition-all duration-[220ms] cursor-default relative overflow-hidden hover:border-primary hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(21,87,36,0.1)] hover:bg-[#f9fffe]">
+      {/* Pillar number */}
+      <div className="absolute top-4 right-[18px] text-[11px] font-bold text-primary-faint tracking-[0.5px] font-heading">
         0{pillar.id}
       </div>
 
       {/* Icon in pill */}
-      <div
-        style={{
-          width: "52px",
-          height: "52px",
-          backgroundColor: "#f0fff4",
-          border: "1px solid #d1fae5",
-          borderRadius: "12px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          flexShrink: 0,
-        }}
-      >
+      <div className="w-[52px] h-[52px] bg-primary-light border border-primary-faint rounded-xl flex items-center justify-center shrink-0">
         {pillar.icon}
       </div>
 
-      <h3
-        style={{
-          fontSize: "0.95rem",
-          fontWeight: 700,
-          color: "#0a1a0e",
-          lineHeight: 1.35,
-          fontFamily: "'Montserrat', sans-serif",
-        }}
-      >
+      <h3 className="text-[0.95rem] font-bold text-text-main leading-[1.35] font-heading">
         {pillar.name}
       </h3>
 
-      <p
-        style={{
-          fontSize: "0.84rem",
-          color: "#6b7280",
-          lineHeight: 1.7,
-        }}
-      >
+      <p className="text-[0.84rem] text-text-muted leading-[1.7]">
         {pillar.description}
       </p>
     </div>

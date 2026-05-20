@@ -1,146 +1,44 @@
-import React from "react";
-
-const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1749192901190-ea45a711b0e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxzb2xhciUyMHBhbmVscyUyMHdpbmQlMjB0dXJiaW5lcyUyMHN1c3RhaW5hYmxlJTIwZW5lcmd5JTIwbGFuZHNjYXBlJTIwYWVyaWFsfGVufDF8fHx8MTc3OTE4Njk3M3ww&ixlib=rb-4.1.0&q=80&w=1920";
-
 export function Hero() {
   return (
     <section
       id="home"
-      style={{
-        position: "relative",
-        width: "100%",
-        minHeight: "100vh",
-        display: "flex",
-        alignItems: "center",
-        overflow: "hidden",
-        fontFamily: "'Inter', sans-serif",
-      }}
+      className="relative w-full min-h-screen flex items-center overflow-hidden font-sans"
     >
       {/* Background Image */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          backgroundImage: `url(../bgCleanEnergy.jpg)`,
-          backgroundSize: "cover",
-          backgroundPosition: "center 40%",
-          backgroundRepeat: "no-repeat",
-        }}
-      />
+      <div className="absolute inset-0 bg-[url('../bgCleanEnergy.jpg')] bg-cover bg-[center_40%] bg-no-repeat" />
 
-      {/* Layered overlay — left-heavy for text readability, opens to image on right */}
+      {/* Layered overlay */}
       <div
+        className="absolute inset-0"
         style={{
-          position: "absolute",
-          inset: 0,
           background:
             "linear-gradient(100deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.70) 42%, rgba(255,255,255,0.20) 70%, rgba(255,255,255,0.05) 100%)",
         }}
       />
+
       {/* Subtle bottom fade */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: "40px",
-          background:
-            "linear-gradient(to top, rgba(255,255,255,0.1) 0%, transparent 100%)",
-        }}
-      />
+      <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-white/10 to-transparent" />
 
       {/* Content */}
-      <div
-        style={{
-          position: "relative",
-          maxWidth: "1280px",
-          margin: "0 auto",
-          padding: "0 2rem",
-          paddingTop: "110px",
-          paddingBottom: "80px",
-          width: "100%",
-        }}
-      >
-        <div style={{ maxWidth: "700px" }}>
+      <div className="relative max-w-[1280px] mx-auto px-8 pt-[110px] pb-20 w-full">
+        <div className="max-w-[700px]">
           {/* Conference edition badge */}
-          <div
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "8px",
-              border: "1px solid #155724",
-              borderRadius: "6px",
-              padding: "5px 14px",
-              marginBottom: "28px",
-              backgroundColor: "rgba(255,255,255,0.85)",
-            }}
-          >
-            <div
-              style={{
-                width: "6px",
-                height: "6px",
-                borderRadius: "50%",
-                backgroundColor: "#2ECC71",
-              }}
-            />
-            <span
-              style={{
-                fontSize: "11px",
-                fontWeight: 700,
-                color: "#155724",
-                letterSpacing: "0.9px",
-                textTransform: "uppercase",
-              }}
-            >
+          <div className="inline-flex items-center gap-2 border border-primary-dark rounded-md px-3.5 py-1.5 mb-7 bg-white/85">
+            <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+            <span className="text-[11px] font-bold text-primary-dark tracking-[0.9px] uppercase">
               2nd National Conference &nbsp;·&nbsp; Hybrid Mode
             </span>
           </div>
 
           {/* Main headline */}
-          <h1
-            style={{
-              fontSize: "clamp(1.9rem, 4vw, 3.1rem)",
-              fontWeight: 800,
-              color: "#0a1a0e",
-              lineHeight: 1.13,
-              letterSpacing: "-0.8px",
-              marginBottom: "18px",
-              fontFamily: "'Montserrat', sans-serif",
-            }}
-          >
+          <h1 className="text-[clamp(1.9rem,4vw,3.1rem)] font-extrabold text-text-main leading-[1.13] tracking-[-0.8px] mb-[18px] font-heading">
             2nd National Conference on{" "}
-            <span style={{ color: "#155724" }}>
-              Clean Energy and Climate Change
-            </span>
+            <span className="text-primary-dark">Clean Energy and Climate Change</span>
           </h1>
 
           {/* Date strip */}
-          <div
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "10px",
-              backgroundColor: "#155724",
-              color: "#ffffff",
-              borderRadius: "7px",
-              padding: "8px 18px",
-              marginBottom: "20px",
-              fontSize: "14px",
-              fontWeight: 600,
-            }}
-          >
-            <svg
-              width="15"
-              height="15"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
+          <div className="inline-flex items-center gap-2.5 bg-primary-dark text-white rounded-md px-[18px] py-2 mb-5 text-sm font-semibold">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
               <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
               <line x1="16" y1="2" x2="16" y2="6" />
               <line x1="8" y1="2" x2="8" y2="6" />
@@ -150,86 +48,22 @@ export function Hero() {
           </div>
 
           {/* Theme */}
-          <div
-            style={{
-              backgroundColor: "rgba(240,255,244,0.92)",
-              border: "1px solid #86efac",
-              borderLeft: "4px solid #2ECC71",
-              borderRadius: "0 8px 8px 0",
-              padding: "14px 18px",
-              marginBottom: "36px",
-              maxWidth: "620px",
-            }}
-          >
-            <p
-              style={{
-                fontSize: "11px",
-                fontWeight: 700,
-                color: "#155724",
-                letterSpacing: "0.8px",
-                textTransform: "uppercase",
-                marginBottom: "5px",
-              }}
-            >
+          <div className="bg-primary-light/92 border border-primary-border border-l-4 border-l-primary rounded-r-lg px-[18px] py-3.5 mb-9 max-w-[620px]">
+            <p className="text-[11px] font-bold text-primary-dark tracking-[0.8px] uppercase mb-1">
               Conference Theme
             </p>
-            <p
-              style={{
-                fontSize: "0.95rem",
-                color: "#1a3a24",
-                lineHeight: 1.6,
-                fontStyle: "italic",
-                fontWeight: 500,
-              }}
-            >
-              "Advancing Clean Energy Solutions for Climate-Resilient and
-              Sustainable Development in Sub-Saharan Africa"
+            <p className="text-[0.95rem] text-[#1a3a24] leading-relaxed italic font-medium">
+              "Advancing Clean Energy Solutions for Climate-Resilient and Sustainable Development in Sub-Saharan Africa"
             </p>
           </div>
 
           {/* CTA buttons */}
-          <div
-            style={{ display: "flex", gap: "14px", flexWrap: "wrap" }}
-          >
+          <div className="flex gap-3.5 flex-wrap">
             <a
               href="#fees"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                backgroundColor: "#2ECC71",
-                color: "#ffffff",
-                padding: "14px 28px",
-                borderRadius: "8px",
-                textDecoration: "none",
-                fontSize: "14.5px",
-                fontWeight: 700,
-                boxShadow: "0 4px 20px rgba(46,204,113,0.38)",
-                transition: "all 0.2s ease",
-              }}
-              onMouseEnter={(e) => {
-                const el = e.currentTarget;
-                el.style.backgroundColor = "#27ae60";
-                el.style.transform = "translateY(-2px)";
-                el.style.boxShadow = "0 8px 28px rgba(46,204,113,0.48)";
-              }}
-              onMouseLeave={(e) => {
-                const el = e.currentTarget;
-                el.style.backgroundColor = "#2ECC71";
-                el.style.transform = "translateY(0)";
-                el.style.boxShadow = "0 4px 20px rgba(46,204,113,0.38)";
-              }}
+              className="inline-flex items-center gap-2 bg-primary text-white px-7 py-3.5 rounded-lg no-underline text-[14.5px] font-bold shadow-[0_4px_20px_rgba(46,204,113,0.38)] transition-all duration-200 hover:bg-primary-hover hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(46,204,113,0.48)]"
             >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
                 <circle cx="9" cy="7" r="4" />
                 <line x1="19" y1="8" x2="19" y2="14" />
@@ -242,42 +76,9 @@ export function Hero() {
               href="https://forms.gle/p8GGUnL6QCdrogsi8"
               target="_blank"
               rel="noopener noreferrer"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                backgroundColor: "rgba(255,255,255,0.9)",
-                color: "#155724",
-                padding: "14px 28px",
-                borderRadius: "8px",
-                textDecoration: "none",
-                fontSize: "14.5px",
-                fontWeight: 600,
-                border: "2px solid #155724",
-                transition: "all 0.2s ease",
-                backdropFilter: "blur(4px)",
-              }}
-              onMouseEnter={(e) => {
-                const el = e.currentTarget;
-                el.style.backgroundColor = "#f0fff4";
-                el.style.transform = "translateY(-2px)";
-              }}
-              onMouseLeave={(e) => {
-                const el = e.currentTarget;
-                el.style.backgroundColor = "rgba(255,255,255,0.9)";
-                el.style.transform = "translateY(0)";
-              }}
+              className="inline-flex items-center gap-2 bg-white/90 text-primary-dark px-7 py-3.5 rounded-lg no-underline text-[14.5px] font-semibold border-2 border-primary-dark transition-all duration-200 hover:bg-primary-light hover:-translate-y-0.5 backdrop-blur-sm"
             >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
                 <polyline points="14 2 14 8 20 8" />
                 <line x1="16" y1="13" x2="8" y2="13" />
@@ -289,79 +90,23 @@ export function Hero() {
           </div>
 
           {/* Inline note */}
-          <p
-            style={{
-              marginTop: "20px",
-              fontSize: "12px",
-              color: "#6b7280",
-              display: "flex",
-              alignItems: "center",
-              gap: "6px",
-            }}
-          >
-            <svg
-              width="13"
-              height="13"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#2ECC71"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
+          <p className="mt-5 text-xs text-text-muted flex items-center gap-1.5">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#2ECC71" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="12" cy="12" r="10" />
               <line x1="12" y1="8" x2="12" y2="12" />
               <line x1="12" y1="16" x2="12.01" y2="16" />
             </svg>
-            Original, previously unpublished work is welcome from researchers,
-            practitioners, academics, and students.
+            Original, previously unpublished work is welcome from researchers, practitioners, academics, and students.
           </p>
         </div>
       </div>
 
       {/* Scroll hint */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: "28px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "5px",
-          opacity: 0.5,
-        }}
-      >
-        <div
-          style={{
-            width: "18px",
-            height: "28px",
-            border: "2px solid #155724",
-            borderRadius: "9px",
-            display: "flex",
-            justifyContent: "center",
-            paddingTop: "4px",
-          }}
-        >
-          <div
-            style={{
-              width: "3px",
-              height: "5px",
-              backgroundColor: "#2ECC71",
-              borderRadius: "2px",
-              animation: "scrollDot 1.6s ease-in-out infinite",
-            }}
-          />
+      <div className="absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 opacity-50">
+        <div className="w-[18px] h-7 border-2 border-primary-dark rounded-[9px] flex justify-center pt-1">
+          <div className="w-[3px] h-[5px] bg-primary rounded-sm animate-scroll-dot" />
         </div>
       </div>
-
-      <style>{`
-        @keyframes scrollDot {
-          0% { transform: translateY(0); opacity: 1; }
-          100% { transform: translateY(10px); opacity: 0; }
-        }
-      `}</style>
     </section>
   );
 }

@@ -1,5 +1,3 @@
-import React from "react";
-
 const NAV_SECTIONS = {
   "Quick Links": [
     { label: "Home", href: "#home" },
@@ -8,13 +6,13 @@ const NAV_SECTIONS = {
     { label: "Action Pillars", href: "#pillars" },
     { label: "Registration Fees", href: "#fees" },
   ],
-  "Submissions": [
+  Submissions: [
     { label: "Go to Google Form", href: "https://forms.gle/p8GGUnL6QCdrogsi8", external: true },
     { label: "Round 1 Deadline: Nov 15, 2026", href: "#timeline" },
     { label: "Round 2 Deadline: Mar 1, 2027", href: "#timeline" },
     { label: "Acceptance Notifications", href: "#timeline" },
   ],
-  "Conference": [
+  Conference: [
     { label: "April 15–16, 2027", href: "#home" },
     { label: "Hybrid Mode (In-Person + Virtual)", href: "#home" },
     { label: "CCECC 2nd National Conference", href: "#home" },
@@ -53,167 +51,46 @@ const SOCIAL = [
 
 export function Footer() {
   return (
-    <footer
-      id="contact"
-      style={{
-        backgroundColor: "#0a1a0e",
-        color: "#ffffff",
-        fontFamily: "'Inter', sans-serif",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: "1280px",
-          margin: "0 auto",
-          padding: "72px 2rem 0",
-        }}
-      >
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1.8fr 1fr 1fr 1fr",
-            gap: "48px",
-            marginBottom: "60px",
-          }}
-          className="footer-grid"
-        >
+    <footer id="contact" className="bg-text-main text-white font-sans">
+      <div className="max-w-[1280px] mx-auto px-8 pt-[72px]">
+        <div className="grid grid-cols-[1.8fr_1fr_1fr_1fr] gap-12 mb-[60px] max-[960px]:grid-cols-2 max-[560px]:grid-cols-1">
           {/* Brand column */}
           <div>
             {/* Logo */}
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "10px",
-                marginBottom: "18px",
-              }}
-            >
-              <div
-                style={{
-                  width: "38px",
-                  height: "38px",
-                  backgroundColor: "#155724",
-                  borderRadius: "9px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  flexShrink: 0,
-                }}
-              >
+            <div className="flex items-center gap-2.5 mb-[18px]">
+              <div className="w-[38px] h-[38px] bg-primary-dark rounded-[9px] flex items-center justify-center shrink-0">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                   <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" fill="#2ECC71" />
-                  <path
-                    d="M12 2v20M3 7l9 5 9-5"
-                    stroke="#ffffff"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
+                  <path d="M12 2v20M3 7l9 5 9-5" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" />
                 </svg>
               </div>
               <div>
-                <div
-                  style={{
-                    fontSize: "16px",
-                    fontWeight: 800,
-                    color: "#ffffff",
-                    fontFamily: "'Montserrat', sans-serif",
-                    lineHeight: 1.1,
-                  }}
-                >
+                <div className="text-base font-extrabold text-white font-heading leading-tight">
                   CCECC Conferences
                 </div>
-                <div
-                  style={{
-                    fontSize: "8.5px",
-                    color: "#2ECC71",
-                    fontWeight: 600,
-                    letterSpacing: "0.6px",
-                    textTransform: "uppercase",
-                  }}
-                >
+                <div className="text-[8.5px] text-primary font-semibold tracking-[0.6px] uppercase">
                   Cluster for Clean Energy & Climate Change
                 </div>
               </div>
             </div>
 
-            <p
-              style={{
-                fontSize: "0.85rem",
-                color: "rgba(255,255,255,0.5)",
-                lineHeight: 1.75,
-                marginBottom: "20px",
-                maxWidth: "290px",
-              }}
-            >
-              Organised by the{" "}
-              <strong style={{ color: "rgba(255,255,255,0.75)" }}>
-                Cluster for Clean Energy and Climate Change (CCECC)
-              </strong>
-              . Connecting research to policy for a sustainable Sub-Saharan Africa.
+            <p className="text-[0.85rem] text-white/50 leading-[1.75] mb-5 max-w-[290px]">
+              Organised by the <strong className="text-white/75">Cluster for Clean Energy and Climate Change (CCECC)</strong>. Connecting research to policy for a sustainable Sub-Saharan Africa.
             </p>
 
             {/* Contact block */}
-            <div
-              style={{
-                backgroundColor: "rgba(46,204,113,0.08)",
-                border: "1px solid rgba(46,204,113,0.2)",
-                borderRadius: "10px",
-                padding: "16px 18px",
-                marginBottom: "22px",
-              }}
-            >
-              <p
-                style={{
-                  fontSize: "10px",
-                  fontWeight: 700,
-                  color: "#2ECC71",
-                  letterSpacing: "0.9px",
-                  textTransform: "uppercase",
-                  marginBottom: "10px",
-                }}
-              >
+            <div className="bg-primary/8 border border-primary/20 rounded-[10px] p-4 px-[18px] mb-5">
+              <p className="text-[10px] font-bold text-primary tracking-[0.9px] uppercase mb-2.5">
                 Conference Contact
               </p>
-              <div
-                style={{
-                  fontSize: "13.5px",
-                  fontWeight: 600,
-                  color: "rgba(255,255,255,0.85)",
-                  marginBottom: "4px",
-                }}
-              >
+              <div className="text-[13.5px] font-semibold text-white/85 mb-1">
                 Prof. Moses Emetere
               </div>
               <a
                 href="mailto:editorial@cceccconferences.com"
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "6px",
-                  fontSize: "12.5px",
-                  color: "#2ECC71",
-                  textDecoration: "none",
-                  wordBreak: "break-all",
-                }}
-                onMouseEnter={(e) =>
-                  ((e.currentTarget as HTMLAnchorElement).style.textDecoration =
-                    "underline")
-                }
-                onMouseLeave={(e) =>
-                  ((e.currentTarget as HTMLAnchorElement).style.textDecoration =
-                    "none")
-                }
+                className="flex items-center gap-1.5 text-[12.5px] text-primary no-underline break-all hover:underline"
               >
-                <svg
-                  width="13"
-                  height="13"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                   <polyline points="22,6 12,13 2,6" />
                 </svg>
@@ -222,34 +99,13 @@ export function Footer() {
             </div>
 
             {/* Social */}
-            <div style={{ display: "flex", gap: "8px" }}>
+            <div className="flex gap-2">
               {SOCIAL.map((s) => (
                 <a
                   key={s.name}
                   href={s.href}
                   aria-label={s.name}
-                  style={{
-                    width: "34px",
-                    height: "34px",
-                    borderRadius: "7px",
-                    backgroundColor: "rgba(255,255,255,0.07)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: "rgba(255,255,255,0.55)",
-                    textDecoration: "none",
-                    transition: "all 0.2s ease",
-                  }}
-                  onMouseEnter={(e) => {
-                    const el = e.currentTarget;
-                    el.style.backgroundColor = "#2ECC71";
-                    el.style.color = "#ffffff";
-                  }}
-                  onMouseLeave={(e) => {
-                    const el = e.currentTarget;
-                    el.style.backgroundColor = "rgba(255,255,255,0.07)";
-                    el.style.color = "rgba(255,255,255,0.55)";
-                  }}
+                  className="w-[34px] h-[34px] rounded-md bg-white/7 flex items-center justify-center text-white/55 no-underline transition-all duration-200 hover:bg-primary hover:text-white"
                 >
                   {s.icon}
                 </a>
@@ -260,46 +116,20 @@ export function Footer() {
           {/* Link columns */}
           {Object.entries(NAV_SECTIONS).map(([section, links]) => (
             <div key={section}>
-              <h4
-                style={{
-                  fontSize: "11px",
-                  fontWeight: 700,
-                  color: "#2ECC71",
-                  letterSpacing: "1px",
-                  textTransform: "uppercase",
-                  marginBottom: "18px",
-                }}
-              >
+              <h4 className="text-[11px] font-bold text-primary tracking-[1px] uppercase mb-[18px]">
                 {section}
               </h4>
-              <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+              <ul className="list-none p-0 m-0">
                 {links.map((link) => (
-                  <li key={link.label} style={{ marginBottom: "9px" }}>
+                  <li key={link.label} className="mb-2">
                     <a
                       href={link.href}
-                      target={"external" in link && link.external ? "_blank" : undefined}
-                      rel={"external" in link && link.external ? "noopener noreferrer" : undefined}
-                      style={{
-                        color: "rgba(255,255,255,0.5)",
-                        textDecoration: "none",
-                        fontSize: "13px",
-                        lineHeight: 1.5,
-                        transition: "color 0.2s",
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "5px",
-                      }}
-                      onMouseEnter={(e) =>
-                        ((e.currentTarget as HTMLAnchorElement).style.color =
-                          "#2ECC71")
-                      }
-                      onMouseLeave={(e) =>
-                        ((e.currentTarget as HTMLAnchorElement).style.color =
-                          "rgba(255,255,255,0.5)")
-                      }
+                      target={link.external ? "_blank" : undefined}
+                      rel={link.external ? "noopener noreferrer" : undefined}
+                      className="text-white/50 no-underline text-[13px] leading-relaxed transition-colors duration-200 hover:text-primary flex items-center gap-1"
                     >
                       {link.label}
-                      {"external" in link && link.external && (
+                      {link.external && (
                         <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                           <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                           <polyline points="15 3 21 3 21 9" />
@@ -315,38 +145,16 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div
-          style={{
-            borderTop: "1px solid rgba(255,255,255,0.07)",
-            padding: "22px 0",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            flexWrap: "wrap",
-            gap: "10px",
-          }}
-        >
-          <p style={{ fontSize: "12px", color: "rgba(255,255,255,0.3)" }}>
+        <div className="border-t border-white/7 py-5 flex justify-between items-center flex-wrap gap-2.5">
+          <p className="text-xs text-white/30">
             © 2026–2027 Cluster for Clean Energy and Climate Change (CCECC). All rights reserved.
           </p>
-          <div style={{ display: "flex", gap: "20px" }}>
+          <div className="flex gap-5">
             {["Privacy Policy", "Terms of Use"].map((label) => (
               <a
                 key={label}
                 href="#"
-                style={{
-                  fontSize: "12px",
-                  color: "rgba(255,255,255,0.3)",
-                  textDecoration: "none",
-                  transition: "color 0.2s",
-                }}
-                onMouseEnter={(e) =>
-                  ((e.target as HTMLAnchorElement).style.color = "rgba(255,255,255,0.6)")
-                }
-                onMouseLeave={(e) =>
-                  ((e.target as HTMLAnchorElement).style.color =
-                    "rgba(255,255,255,0.3)")
-                }
+                className="text-xs text-white/30 no-underline transition-colors duration-200 hover:text-white/60"
               >
                 {label}
               </a>
@@ -354,15 +162,6 @@ export function Footer() {
           </div>
         </div>
       </div>
-
-      <style>{`
-        @media (max-width: 960px) {
-          .footer-grid { grid-template-columns: 1fr 1fr !important; }
-        }
-        @media (max-width: 560px) {
-          .footer-grid { grid-template-columns: 1fr !important; }
-        }
-      `}</style>
     </footer>
   );
 }
