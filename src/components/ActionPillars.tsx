@@ -146,16 +146,16 @@ export function ActionPillars() {
 
   return (
     <section id="pillars" className="bg-white py-24 font-sans overflow-hidden">
-      <div className="max-w-[1280px] mx-auto px-8">
+      <div className="px-8">
         {/* Section header */}
         <div className="text-center mb-14">
-          <p className="text-[11px] font-bold text-primary tracking-[1.2px] uppercase mb-2.5">
+          <p className="text-[11px] font-bold text-primary tracking-widest uppercase mb-2.5">
             Conference Sub-Themes
           </p>
           <h2 className="text-[clamp(1.7rem,3vw,2.5rem)] font-extrabold text-text-main tracking-[-0.5px] mb-3.5 font-heading">
             7 Action Pillars
           </h2>
-          <p className="text-[0.93rem] text-text-muted max-w-[500px] mx-auto leading-[1.7]">
+          <p className="text-[0.93rem] text-text-muted max-w-125 mx-auto leading-[1.7]">
             The conference is structured around seven interconnected sub-themes,
             each addressing a critical dimension of clean energy and climate
             action in Sub-Saharan Africa.
@@ -186,14 +186,14 @@ export function ActionPillars() {
                 className="w-full shrink-0 flex flex-col min-[800px]:flex-row"
               >
                 {/* Image side */}
-                <div className="relative w-full min-[800px]:w-[55%] aspect-[4/3] min-[800px]:aspect-auto min-[800px]:min-h-[420px] bg-[#f3f4f6] overflow-hidden">
+                <div className="relative w-full min-[800px]:w-[55%] aspect-4/3 min-[800px]:aspect-auto min-[800px]:min-h-105 bg-border-light overflow-hidden">
                   <img
                     src={slide.image}
                     alt={slide.name}
                     className="absolute inset-0 w-full h-full object-cover"
                     loading={i === 1 || i === 2 ? "eager" : "lazy"}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent min-[800px]:bg-gradient-to-r" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent min-[800px]:bg-linear-to-r" />
                   
                   <div className="absolute top-5 left-5 bg-white/90 backdrop-blur-sm border border-primary-faint rounded-lg px-3 py-1.5">
                     <span className="text-xs font-bold text-primary-dark font-heading">
@@ -204,7 +204,7 @@ export function ActionPillars() {
 
                 {/* Text side */}
                 <div className="w-full min-[800px]:w-[45%] p-8 min-[800px]:p-10 flex flex-col justify-center">
-                  <div className="w-[52px] h-[52px] bg-primary-light border border-primary-faint rounded-xl flex items-center justify-center mb-5 shrink-0">
+                  <div className="w-13 h-13 bg-primary-light border border-primary-faint rounded-xl flex items-center justify-center mb-5 shrink-0">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#155724" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
                     </svg>
@@ -219,7 +219,7 @@ export function ActionPillars() {
                   </p>
 
                   <div className="flex items-center gap-2 text-xs font-semibold text-primary tracking-[0.5px] uppercase">
-                    <span className="w-8 h-[2px] bg-primary rounded-full" />
+                    <span className="w-8 h-0.5 bg-primary rounded-full" />
                     Sub-Theme {slide.id} of {total}
                   </div>
                 </div>
@@ -265,7 +265,7 @@ export function ActionPillars() {
           </div>
 
           {/* Progress bar */}
-          <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-border-light">
+          <div className="absolute bottom-0 left-0 right-0 h-0.75 bg-border-light">
             <div
               className="h-full bg-primary transition-all duration-300"
               style={{

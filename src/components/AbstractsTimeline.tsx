@@ -1,3 +1,5 @@
+import { TimelineStep } from "./ui/TimelineStep";
+
 const TIMELINE_ITEMS = [
   {
     id: 1,
@@ -65,16 +67,16 @@ const TIMELINE_ITEMS = [
 export function AbstractsTimeline() {
   return (
     <section id="timeline" className="bg-bg-alt py-24 font-sans">
-      <div className="max-w-[1280px] mx-auto px-8">
+      <div className="px-8">
         {/* Section header */}
-        <div className="text-center mb-[60px]">
-          <p className="text-[11px] font-bold text-primary tracking-[1.2px] uppercase mb-2.5">
+        <div className="text-center mb-15">
+          <p className="text-[11px] font-bold text-primary tracking-widest uppercase mb-2.5">
             Call for Abstracts
           </p>
           <h2 className="text-[clamp(1.7rem,3vw,2.5rem)] font-extrabold text-text-main tracking-[-0.5px] mb-3.5 font-heading">
             Submission Timeline
           </h2>
-          <p className="text-[0.93rem] text-text-muted max-w-[560px] mx-auto leading-[1.7]">
+          <p className="text-[0.93rem] text-text-muted max-w-140 mx-auto leading-[1.7]">
             The conference welcomes original, previously unpublished work from
             researchers, practitioners, academics, and students. Accepted papers
             will receive feedback to support post-conference publication.
@@ -92,8 +94,8 @@ export function AbstractsTimeline() {
         </div>
 
         {/* Context note + CTA */}
-        <div className="max-w-[680px] mx-auto text-center">
-          <div className="bg-white border border-border-default border-l-4 border-l-primary rounded-r-[10px] px-[22px] py-[18px] mb-8 text-left">
+        <div className="max-w-170 mx-auto text-center">
+          <div className="bg-white border border-border-default border-l-4 border-l-primary rounded-r-[10px] px-5.5 py-4.5 mb-8 text-left">
             <p className="text-[0.87rem] text-text-light leading-[1.7] m-0">
               <strong className="text-primary-dark">Publication pathway:</strong>{" "}
               The conference welcomes original, previously unpublished work from
@@ -107,7 +109,7 @@ export function AbstractsTimeline() {
             href="https://forms.gle/p8GGUnL6QCdrogsi8"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 bg-primary-dark text-white px-[30px] py-3.5 rounded-lg no-underline text-[14.5px] font-bold shadow-[0_4px_18px_rgba(21,87,36,0.22)] transition-all duration-200 hover:bg-[#0f3d1a] hover:-translate-y-0.5 hover:shadow-[0_8px_26px_rgba(21,87,36,0.3)]"
+            className="inline-flex items-center gap-2.5 bg-primary-dark text-white px-7.5 py-3.5 rounded-lg no-underline text-[14.5px] font-bold shadow-[0_4px_18px_rgba(21,87,36,0.22)] transition-all duration-200 hover:bg-[#0f3d1a] hover:-translate-y-0.5 hover:shadow-[0_8px_26px_rgba(21,87,36,0.3)]"
           >
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
@@ -129,75 +131,3 @@ export function AbstractsTimeline() {
   );
 }
 
-function TimelineStep({ item }: { item: (typeof TIMELINE_ITEMS)[number] }) {
-  const nodeColor = item.isMain ? "#155724" : item.color;
-  const nodeBorder = item.isMain ? "#2ECC71" : "#ffffff";
-  const nodeShadow = item.isMain
-    ? "0 0 0 4px rgba(21,87,36,0.15), 0 4px 16px rgba(21,87,36,0.25)"
-    : `0 0 0 3px ${item.color}22, 0 2px 10px ${item.color}33`;
-
-  return (
-    <div className="flex flex-col items-center text-center px-3 relative z-10">
-      {/* Node dot */}
-      <div
-        className="w-14 h-14 rounded-full border-4 border-white flex items-center justify-center mb-4 shrink-0 transition-transform duration-200 hover:scale-110"
-        style={{
-          backgroundColor: nodeColor,
-          borderColor: nodeBorder,
-          boxShadow: nodeShadow,
-        }}
-      >
-        {item.type === "submission" ? (
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-            <polyline points="14 2 14 8 20 8" />
-          </svg>
-        ) : item.type === "notification" ? (
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.26 12" />
-            <path d="M4.26 12A19.5 19.5 0 0 1 1.07 3.37 2 2 0 0 1 3.07 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.07 9.09" />
-            <polyline points="15 3 21 3 21 9" />
-            <line x1="10" y1="14" x2="21" y2="3" />
-          </svg>
-        ) : (
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-            <line x1="16" y1="2" x2="16" y2="6" />
-            <line x1="8" y1="2" x2="8" y2="6" />
-            <line x1="3" y1="10" x2="21" y2="10" />
-          </svg>
-        )}
-      </div>
-
-      {/* Round badge */}
-      <span
-        className="inline-block text-[9.5px] font-bold tracking-[0.7px] uppercase px-2 py-0.5 rounded-full mb-[7px] border"
-        style={{
-          backgroundColor: `${item.color}18`,
-          borderColor: `${item.color}44`,
-          color: item.color === "#155724" ? "#155724" : item.color,
-        }}
-      >
-        {item.round}
-      </span>
-
-      {/* Date */}
-      <p
-        className="text-xs font-bold mb-1 tracking-[0.2px]"
-        style={{ color: item.color === "#155724" ? "#155724" : item.color }}
-      >
-        {item.date}
-      </p>
-
-      {/* Label */}
-      <p className="text-[12.5px] font-bold text-text-main mb-1.5 leading-[1.3] font-heading">
-        {item.label}
-      </p>
-
-      {/* Description */}
-      <p className="text-[11.5px] text-text-muted leading-[1.6] max-w-[180px]">
-        {item.description}
-      </p>
-    </div>
-  );
-}

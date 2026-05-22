@@ -101,11 +101,11 @@ const HIGHLIGHTS = [
   export function PastConferences() {
     return (
       <section className="bg-bg-alt py-24 font-sans border-t border-border-light">
-        <div className="max-w-[1280px] mx-auto px-8">
+        <div className="px-8">
           {/* Section header */}
           <div className="flex items-end justify-between gap-6 mb-12 flex-wrap">
             <div>
-              <p className="text-[11px] font-bold text-primary tracking-[1.2px] uppercase mb-2.5">
+              <p className="text-[11px] font-bold text-primary tracking-widest uppercase mb-2.5">
                 Conference History
               </p>
               <h2 className="text-[clamp(1.7rem,3vw,2.5rem)] font-extrabold text-text-main tracking-[-0.5px] font-heading leading-[1.1]">
@@ -114,11 +114,11 @@ const HIGHLIGHTS = [
             </div>
   
             {/* Edition pill nav */}
-            <div className="flex gap-2 bg-border-light p-[5px] rounded-[10px]">
+            <div className="flex gap-2 bg-border-light p-1.25 rounded-lg">
               {EDITIONS.map((ed) => (
                 <div
                   key={ed.year}
-                  className={`px-4 py-[7px] rounded-md text-[12.5px] font-bold font-heading flex items-center gap-1.5 tracking-[0.3px] cursor-default ${
+                  className={`px-4 py-2 rounded-md text-xs font-bold font-heading flex items-center gap-1.5 tracking-wider cursor-default ${
                     ed.active ? "bg-primary-dark text-white" : "bg-transparent text-text-faint"
                   }`}
                 >
@@ -127,7 +127,7 @@ const HIGHLIGHTS = [
                   )}
                   {ed.year}
                   {ed.status === "upcoming" && (
-                    <span className="text-[9px] bg-primary/15 text-primary px-[5px] py-px rounded font-semibold">
+                    <span className="text-[9px] bg-primary/15 text-primary px-1.25 py-px rounded font-semibold">
                       Soon
                     </span>
                   )}
@@ -151,13 +151,13 @@ const HIGHLIGHTS = [
   
               {/* Top glow */}
               <div
-                className="absolute -top-[60px] -left-10 w-[280px] h-[280px] rounded-full bg-primary/6 blur-[40px] pointer-events-none"
+                className="absolute -top-15 -left-10 w-70 h-70 rounded-full bg-primary/6 blur-2xl pointer-events-none"
               />
   
               <div className="relative px-10 pt-10 pb-9">
                 {/* Status + edition badge */}
                 <div className="flex items-center gap-2.5 mb-8">
-                  <div className="flex items-center gap-1.5 bg-primary/12 border border-primary/25 rounded-full px-3 py-[5px]">
+                  <div className="flex items-center gap-1.5 bg-primary/12 border border-primary/25 rounded-full px-3 py-1.25">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                     <span className="text-[10.5px] font-bold text-primary tracking-[0.8px] uppercase">
                       Completed
@@ -174,7 +174,7 @@ const HIGHLIGHTS = [
                   <span className="text-primary">-2026</span>
                 </div>
   
-                <p className="text-[13px] text-white/50 italic leading-relaxed mb-8 max-w-[340px]">
+                <p className="text-sm text-white/50 italic leading-relaxed mb-8 max-w-85">
                   National Conference on Clean Energy and Climate Change
                 </p>
   
@@ -182,12 +182,12 @@ const HIGHLIGHTS = [
                 {INFO_ROWS.map((row, i) => (
                   <div
                     key={i}
-                    className="flex items-center gap-3 py-[11px] border-t border-white/[0.06]"
+                    className="flex items-center gap-3 py-2.75 border-t border-white/6"
                   >
-                    <div className="w-[30px] h-[30px] rounded-md bg-primary/10 flex items-center justify-center shrink-0">
+                    <div className="w-7.5 h-7.5 rounded-md bg-primary/10 flex items-center justify-center shrink-0">
                       {row.icon}
                     </div>
-                    <span className="text-[13px] text-white/75 font-medium">
+                    <span className="text-xs text-white/75 font-medium">
                       {row.value}
                     </span>
                   </div>
@@ -195,7 +195,7 @@ const HIGHLIGHTS = [
               </div>
   
               {/* Bottom action strip */}
-              <div className="border-t border-white/[0.07] px-10 py-[18px] flex items-center justify-between gap-3 flex-wrap">
+              <div className="border-t border-white/7 px-10 py-4 flex items-center justify-between gap-3 flex-wrap">
                 <span className="text-xs text-white/35">
                   View previous edition
                 </span>
@@ -218,17 +218,17 @@ const HIGHLIGHTS = [
                 {HIGHLIGHTS.map((h, i) => (
                   <div
                     key={i}
-                    className={`rounded-[14px] p-6 px-[22px] flex flex-col gap-2.5 transition-all duration-[220ms] cursor-default hover:-translate-y-[3px] hover:border-primary hover:bg-primary-light hover:shadow-[0_8px_24px_rgba(21,87,36,0.1)] bg-white border border-border-default`}
+                    className={`rounded-lg p-6 px-5 flex flex-col gap-2.5 transition-all duration-220 hover:-translate-y-0.75 hover:border-primary hover:bg-primary-light hover:shadow-[0_8px_24px_rgba(21,87,36,0.1)] bg-white border border-border-default`}
                   >
-                    <div className="w-[38px] h-[38px] rounded-md bg-white border border-primary-faint flex items-center justify-center text-primary-dark">
+                    <div className="w-8 h-8 rounded-md bg-white border border-primary-faint flex items-center justify-center text-primary-dark">
                       {h.icon}
                     </div>
                     <div>
-                      <div className="text-[2.2rem] font-black text-text-main font-heading leading-none tracking-[-1px]">
+                      <div className="text-4xl font-black text-text-main font-heading leading-none tracking-[-1px]">
                         {h.value}
-                        <span className="text-[1.2rem] text-primary">{h.unit}</span>
+                        <span className="text-lg text-primary">{h.unit}</span>
                       </div>
-                      <div className="text-[13px] font-bold text-text-body mt-1">
+                      <div className="text-sm font-bold text-text-body mt-1">
                         {h.label}
                       </div>
                       <div className="text-[11.5px] text-text-faint mt-0.5">
@@ -240,7 +240,7 @@ const HIGHLIGHTS = [
               </div>
   
               {/* Theme tag row */}
-              <div className="bg-bg-alt border border-border-default rounded-[14px] p-5 px-[22px]">
+              <div className="bg-bg-alt border border-border-default rounded-lg p-5 px-5">
                 <p className="text-[10px] font-bold text-text-faint tracking-[1px] uppercase mb-3">
                   2026 Conference Theme
                 </p>
@@ -250,7 +250,7 @@ const HIGHLIGHTS = [
               </div>
   
               {/* Partner logos */}
-              <div className="border border-border-default rounded-[14px] p-5 px-[22px] bg-white">
+              <div className="border border-border-default rounded-lg p-5 px-5 bg-white">
                 <p className="text-[10px] font-bold text-text-faint tracking-[1px] uppercase mb-3.5">
                   Sponsors & Partners
                 </p>
@@ -259,7 +259,7 @@ const HIGHLIGHTS = [
                     <div
                       key={p.abbr}
                       title={p.name}
-                      className="h-16 bg-[#f9fafb] overflow-hidden border-[1.5px] border-dashed border-border-default rounded-lg flex flex-col items-center justify-center gap-[3px] transition-all duration-200 hover:border-primary hover:bg-primary-light hover:border-solid cursor-default"
+                      className="h-16 bg-[#f9fafb] overflow-hidden border-[1.5px] border-dashed border-border-default rounded-lg flex flex-col items-center justify-center gap-0.75 transition-all duration-200 hover:border-primary hover:bg-primary-light hover:border-solid cursor-default"
                     >
                       {/* <span className="text-[13px] font-extrabold text-[#cbd5e1] font-heading tracking-[0.3px]">
                         {p.abbr}

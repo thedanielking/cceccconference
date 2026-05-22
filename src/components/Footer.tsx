@@ -58,13 +58,13 @@ const SOCIAL = [
 export function Footer() {
   return (
     <footer id="contact" className="bg-text-main text-white font-sans">
-      <div className="max-w-[1280px] mx-auto px-8 pt-[72px]">
-        <div className="grid grid-cols-[1.8fr_1fr_1fr_1fr] gap-12 mb-[60px] max-[960px]:grid-cols-2 max-[560px]:grid-cols-1">
+      <div className="px-8 pt-18">
+        <div className="grid grid-cols-[1.8fr_1fr_1fr_1fr] gap-12 mb-15 max-[960px]:grid-cols-2 max-[560px]:grid-cols-1">
           {/* Brand column */}
           <div>
             {/* Logo */}
-            <div className="flex items-center gap-2.5 mb-[18px]">
-              <div className="w-[38px] h-[38px] bg-primary-dark rounded-[9px] flex items-center justify-center shrink-0">
+            <div className="flex items-center gap-2.5 mb-4.5">
+              <div className="w-9.5 h-9.5 bg-primary-dark rounded-[9px] flex items-center justify-center shrink-0">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                   <path d="M12 2L3 7v10l9 5 9-5V7L12 2z" fill="#2ECC71" />
                   <path d="M12 2v20M3 7l9 5 9-5" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" />
@@ -80,21 +80,21 @@ export function Footer() {
               </div>
             </div>
 
-            <p className="text-[0.85rem] text-white/50 leading-[1.75] mb-5 max-w-[290px]">
+            <p className="text-[0.85rem] text-white/50 leading-[1.75] mb-5 max-w-72.5">
               Organised by the <strong className="text-white/75">Cluster for Clean Energy and Climate Change (CCECC)</strong>. Connecting research to policy for a sustainable Sub-Saharan Africa.
             </p>
 
             {/* Contact block */}
-            <div className="bg-primary/8 border border-primary/20 rounded-[10px] p-4 px-[18px] mb-5">
+            <div className="bg-primary/8 border border-primary/20 rounded-[10px] p-4 px-4.5 mb-5">
               <p className="text-[10px] font-bold text-primary tracking-[0.9px] uppercase mb-2.5">
                 Conference Contact
               </p>
-              <div className="text-[13.5px] font-semibold text-white/85 mb-1">
+              <div className="text-sm font-semibold text-white/85 mb-1">
                 Prof. Moses Emetere
               </div>
               <a
                 href="mailto:editorial@cceccconferences.com"
-                className="flex items-center gap-1.5 text-[12.5px] text-primary no-underline break-all hover:underline"
+                className="flex items-center gap-1.5 text-xs text-primary no-underline break-all hover:underline"
               >
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
@@ -111,7 +111,7 @@ export function Footer() {
                   key={s.name}
                   href={s.href}
                   aria-label={s.name}
-                  className="w-[34px] h-[34px] rounded-md bg-white/7 flex items-center justify-center text-white/55 no-underline transition-all duration-200 hover:bg-primary hover:text-white"
+                  className="w-8.5 h-8.5 rounded-md bg-white/7 flex items-center justify-center text-white/55 no-underline transition-all duration-200 hover:bg-primary hover:text-white"
                 >
                   {s.icon}
                 </a>
@@ -122,7 +122,7 @@ export function Footer() {
           {/* Link columns */}
           {Object.entries(NAV_SECTIONS).map(([section, links]) => (
             <div key={section}>
-              <h4 className="text-[11px] font-bold text-primary tracking-[1px] uppercase mb-[18px]">
+              <h4 className="text-[11px] font-bold text-primary tracking-[1px] uppercase mb-4.5">
                 {section}
               </h4>
               <ul className="list-none p-0 m-0">

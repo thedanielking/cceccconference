@@ -2,11 +2,11 @@ export function FinalCTA() {
   return (
     <section className="bg-primary-dark py-24 font-sans relative overflow-hidden">
       {/* Decorative rings */}
-      <div className="absolute -top-[100px] -right-[100px] w-[480px] h-[480px] rounded-full border border-primary/12 pointer-events-none" />
-      <div className="absolute -top-[60px] -right-[60px] w-[320px] h-[320px] rounded-full bg-primary/6 pointer-events-none" />
-      <div className="absolute -bottom-[80px] -left-[80px] w-[360px] h-[360px] rounded-full border border-primary/8 pointer-events-none" />
+      <div className="absolute -top-25 -right-25 w-120 h-120 rounded-full border border-primary/12 pointer-events-none" />
+      <div className="absolute -top-15 -right-15 w-80 h-80 rounded-full bg-primary/6 pointer-events-none" />
+      <div className="absolute -bottom-20 -left-20 w-90 h-90 rounded-full border border-primary/8 pointer-events-none" />
 
-      <div className="max-w-[1280px] mx-auto px-8 relative text-center">
+      <div className="px-8 relative text-center">
         {/* Eyebrow */}
         <div className="inline-flex items-center gap-2 bg-primary/12 border border-primary/30 rounded-md px-3.5 py-1.5 mb-7">
           <div className="w-1.5 h-1.5 rounded-full bg-primary" />
@@ -15,12 +15,12 @@ export function FinalCTA() {
           </span>
         </div>
 
-        <h2 className="text-[clamp(1.9rem,4vw,3rem)] font-extrabold text-white tracking-[-0.8px] leading-[1.12] mb-[18px] font-heading max-w-[660px] mx-auto">
+        <h2 className="text-[clamp(1.9rem,4vw,3rem)] font-extrabold text-white tracking-[-0.8px] leading-[1.12] mb-4.5 font-heading max-w-165 mx-auto">
           Ready to Take Action?{" "}
           <span className="text-primary">The Future of Energy Starts With You.</span>
         </h2>
 
-        <p className="text-base text-white/70 max-w-[520px] mx-auto mb-11 leading-[1.75]">
+        <p className="text-base text-white/70 max-w-130 mx-auto mb-11 leading-[1.75]">
           Join researchers, policymakers, engineers, and advocates at Nigeria's
           premier clean energy and climate change conference. Submit your abstract
           or register your place today.

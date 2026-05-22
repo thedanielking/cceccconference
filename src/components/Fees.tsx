@@ -1,28 +1,26 @@
 import { Modal } from "./Modal";
-import { RegistrationModal } from "./RegistrationModal";
 
 export function Fees() {  
 
   return (
-    <Modal>
     <section id="fees" className="bg-bg-alt py-24 font-sans">
-      <div className="max-w-[1280px] mx-auto px-8">
+      <div className="px-8">
         {/* Section header */}
         <div className="text-center mb-14">
-          <p className="text-[11px] font-bold text-primary tracking-[1.2px] uppercase mb-2.5">
+          <p className="text-[11px] font-bold text-primary tracking-widest uppercase mb-2.5">
             Registration
           </p>
           <h2 className="text-[clamp(1.7rem,3vw,2.5rem)] font-extrabold text-text-main tracking-[-0.5px] mb-3.5 font-heading">
             Conference Fees
           </h2>
-          <p className="text-[0.93rem] text-text-muted max-w-[460px] mx-auto leading-[1.7]">
+          <p className="text-[0.93rem] text-text-muted max-w-115max-w-115 mx-auto leading-[1.7]">
             Secure your place at the 2nd CCECC Conference. Register early to
             take advantage of the discounted rate.
           </p>
         </div>
 
         {/* Pricing cards */}
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-7 max-w-[800px] mx-auto mb-12">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-7 max-w-200 mx-auto mb-12">
           {/* Early Bird */}
           <div className="bg-white border-2 border-primary rounded-2xl p-10 px-9 relative shadow-[0_8px_32px_rgba(46,204,113,0.12)] transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_16px_48px_rgba(46,204,113,0.18)]">
             {/* Recommended badge */}
@@ -32,7 +30,7 @@ export function Fees() {
 
             <div className="text-center">
               {/* Tier label */}
-              <div className="inline-flex items-center gap-[7px] bg-primary-light border border-primary-border rounded-md px-3.5 py-1.5 mb-5">
+              <div className="inline-flex items-center gap-1.75 bg-primary-light border border-primary-border rounded-md px-3.5 py-1.5 mb-5">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#155724" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
                 </svg>
@@ -43,12 +41,12 @@ export function Fees() {
 
               {/* Price */}
               <div className="flex items-start justify-center gap-1 mb-1">
-                <span className="text-[22px] font-bold text-primary-dark pt-1.5 font-heading">₦</span>
+                <span className="text-lg font-bold text-primary-dark pt-1.5 font-heading">₦</span>
                 <span className="text-[3.6rem] font-black text-primary-dark leading-none font-heading tracking-[-2px]">
                   30,000
                 </span>
               </div>
-              <p className="text-[12.5px] text-text-muted mb-7">
+              <p className="text-xs text-text-muted mb-7">
                 Before March 25, 2027
               </p>
 
@@ -72,7 +70,7 @@ export function Fees() {
                   "Post-conference publication feedback",
                   "Networking sessions",
                 ].map((feature) => (
-                  <li key={feature} className="flex items-center gap-2.5 py-[7px] text-[13px] text-text-body border-b border-border-light">
+                  <li key={feature} className="flex items-center gap-2.5 py-1.75 text-[13px] text-text-body border-b border-border-light">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ECC71" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
@@ -95,7 +93,7 @@ export function Fees() {
           <div className="bg-white border-[1.5px] border-border-default rounded-2xl p-10 px-9 transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(0,0,0,0.08)] hover:border-[#d1d5db]">
             <div className="text-center">
               {/* Tier label */}
-              <div className="inline-flex items-center gap-[7px] bg-[#f9fafb] border border-border-default rounded-md px-3.5 py-1.5 mb-5">
+              <div className="inline-flex items-center gap-1.75 bg-[#f9fafb] border border-border-default rounded-md px-3.5 py-1.5 mb-5">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6b7280" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
                   <line x1="16" y1="2" x2="16" y2="6" />
@@ -109,12 +107,12 @@ export function Fees() {
 
               {/* Price */}
               <div className="flex items-start justify-center gap-1 mb-1">
-                <span className="text-[22px] font-bold text-text-body pt-1.5 font-heading">₦</span>
+                <span className="text-lg font-bold text-text-body pt-1.5 font-heading">₦</span>
                 <span className="text-[3.6rem] font-black text-text-body leading-none font-heading tracking-[-2px]">
                   40,000
                 </span>
               </div>
-              <p className="text-[12.5px] text-text-muted mb-7">
+              <p className="text-xs text-text-muted mb-7">
                 After March 25, 2027
               </p>
 
@@ -139,7 +137,7 @@ export function Fees() {
                   "Post-conference publication feedback",
                   "Networking sessions",
                 ].map((feature) => (
-                  <li key={feature} className="flex items-center gap-2.5 py-[7px] text-[13px] text-text-body border-b border-border-light">
+                  <li key={feature} className="flex items-center gap-2.5 py-1.75 text-[13px] text-text-body border-b border-border-light">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
@@ -161,20 +159,15 @@ export function Fees() {
         </div>
 
         {/* Info note */}
-        <p className="text-center text-[12.5px] text-text-faint max-w-[500px] mx-auto leading-relaxed">
+        <p className="text-center text-[12.5px] text-text-faint max-w-125 mx-auto leading-relaxed">
           For payment instructions and registration queries, contact{" "}
           <a href="mailto:editorial@cceccconferences.com" className="text-primary-dark font-semibold no-underline">
             editorial@cceccconferences.com
           </a>
         </p>
       </div>
-    </section>
+    </section>     
 
-      {/* Modal window definition */}
-      <Modal.Window name="register">
-        <RegistrationModal />
-      </Modal.Window>
-
-    </Modal>
+    
   );
 }

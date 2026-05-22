@@ -5,12 +5,11 @@ import { WhyNow } from "./components/WhyNow";
 import { PastConferences } from "./components/PastConferences";
 import { Proceedings } from "./components/Proceedings";
 import { AbstractsTimeline } from "./components/AbstractsTimeline";
-import { RegistrationMethod } from "./components/RegistrationMethod"; // Remove this line
 import { ActionPillars } from "./components/ActionPillars";
 import { Fees } from "./components/Fees";
 import { FinalCTA } from "./components/FinalCTA";
 import { Footer } from "./components/Footer";
-import { RegistrationModal } from "./components/RegistrationModal"; // Add this
+import { RegistrationModal } from "./components/RegistrationModal";
 
 export default function App() {
   return (
@@ -22,7 +21,6 @@ export default function App() {
         <PastConferences />
         <Proceedings />
         <AbstractsTimeline />
-        {/* Remove <RegistrationMethod /> from page flow */}
         <ActionPillars />
         <Fees />
         <FinalCTA />

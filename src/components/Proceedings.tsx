@@ -25,10 +25,10 @@ const VOLUME = {
   export function Proceedings() {
     return (
       <section className="bg-white py-24 font-sans border-t border-border-light">
-        <div className="max-w-[1280px] mx-auto px-8">
+        <div className="px-8">
           {/* Section header */}
           <div className="text-center mb-12">
-            <p className="text-[11px] font-bold text-primary tracking-[1.2px] uppercase mb-2.5">
+            <p className="text-[11px] font-bold text-primary tracking-widest uppercase mb-2.5">
               Publications
             </p>
             <h2 className="text-[clamp(1.7rem,3vw,2.5rem)] font-extrabold text-text-main tracking-[-0.5px] font-heading">
@@ -37,7 +37,7 @@ const VOLUME = {
           </div>
   
           {/* Document card */}
-          <div className="max-w-[860px] mx-auto bg-white border border-border-default rounded-[18px] overflow-hidden shadow-[0_4px_32px_rgba(0,0,0,0.05)]">
+          <div className="max-w-215 mx-auto bg-white border border-border-default rounded-2xl overflow-hidden shadow-[0_4px_32px_rgba(0,0,0,0.05)]">
             {/* Top layout: spine + content */}
             <div className="flex max-[600px]:flex-col">
               {/* Book spine */}
@@ -47,9 +47,9 @@ const VOLUME = {
               <div className="flex-1 pt-9 px-9">
                 {/* Header row */}
                 <div className="flex items-start justify-between gap-5 flex-wrap mb-6">
-                  <div className="flex-1 min-w-[200px]">
+                  <div className="flex-1 min-w-50">
                     {/* Volume badge */}
-                    <div className="inline-flex items-center gap-[7px] bg-primary-light border border-primary-border rounded-md px-3 py-1 mb-3.5">
+                    <div className="inline-flex items-center gap-1.75 bg-primary-light border border-primary-border rounded-md px-3 py-1 mb-3.5">
                       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#155724" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
                         <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
@@ -59,19 +59,19 @@ const VOLUME = {
                       </span>
                     </div>
   
-                    <h3 className="text-[1.25rem] font-extrabold text-text-main leading-[1.25] mb-1.5 font-heading">
+                    <h3 className="text-lg font-extrabold text-text-main leading-tight mb-1.5 font-heading">
                       {VOLUME.title}
                     </h3>
-                    <p className="text-[12.5px] text-text-muted italic mb-0">
+                    <p className="text-xs text-text-muted italic mb-0">
                       {VOLUME.edition}
                     </p>
                   </div>
   
                   {/* Document icon mockup */}
-                  <div className="w-[72px] h-[90px] bg-[#f9fafb] border-[1.5px] border-border-default rounded-lg flex flex-col items-center justify-center gap-1.5 shrink-0 relative overflow-hidden">
+                  <div className="w-18 h-22.5 bg-[#f9fafb] border-[1.5px] border-border-default rounded-lg flex flex-col items-center justify-center gap-1.5 shrink-0 relative overflow-hidden">
                     {/* Dog-ear corner */}
                     <div
-                      className="absolute top-0 right-0 w-[18px] h-[18px] bg-border-default"
+                      className="absolute top-0 right-0 w-4.5 h-4.5 bg-border-default"
                       style={{ clipPath: "polygon(100% 0, 100% 100%, 0 0)" }}
                     />
                     <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d1d5db" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -94,7 +94,7 @@ const VOLUME = {
                       <p className="text-[9.5px] font-bold text-text-faint tracking-[0.8px] uppercase mb-0.5">
                         {meta.label}
                       </p>
-                      <p className="text-[12.5px] font-semibold text-text-body">
+                      <p className="text-xs font-semibold text-text-body">
                         {meta.value}
                       </p>
                     </div>
@@ -103,7 +103,7 @@ const VOLUME = {
   
                 {/* Abstract */}
                 <div className="mb-5">
-                  <p className="text-[9.5px] font-bold text-text-faint tracking-[0.8px] uppercase mb-[7px]">
+                  <p className="text-[9.5px] font-bold text-text-faint tracking-[0.8px] uppercase mb-1.75">
                     About This Volume
                   </p>
                   <p className="text-[13px] text-text-light leading-[1.75]">
@@ -137,7 +137,7 @@ const VOLUME = {
                     {INDEX_TAGS.map((tag) => (
                       <span
                         key={tag}
-                        className="bg-primary-light border border-primary-border rounded-md px-3 py-1 text-[11.5px] font-semibold text-primary-dark flex items-center gap-[5px]"
+                        className="bg-primary-light border border-primary-border rounded-md px-3 py-1 text-[11.5px] font-semibold text-primary-dark flex items-center gap-1.25"
                       >
                         <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#2ECC71" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                           <polyline points="20 6 9 17 4 12" />

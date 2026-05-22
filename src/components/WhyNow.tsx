@@ -65,18 +65,18 @@ const CARDS = [
 export function WhyNow() {
   return (
     <section id="about" className="bg-white py-24 font-sans">
-      <div className="max-w-[1280px] mx-auto px-8">
+      <div className="px-8">
         {/* Section header */}
         <div className="flex flex-col items-center mb-14 flex-wrap">
           <div>
-            <p className="text-[11px] font-bold text-primary tracking-[1.2px] uppercase text-center mb-2.5">
+            <p className="text-[11px] font-bold text-primary tracking-widest uppercase text-center mb-2.5">
               Why Attend
             </p>
-            <h2 className="text-[clamp(1.7rem,3vw,2.5rem)] font-extrabold text-text-main tracking-[-0.5px] leading-[1.15] text-center font-heading max-w-[460px]">
+            <h2 className="text-[clamp(1.7rem,3vw,2.5rem)] font-extrabold text-text-main tracking-[-0.5px] leading-[1.15] text-center font-heading max-w-115">
               The Mission Behind the Conference
             </h2>
           </div>
-          <p className="text-[0.93rem] text-text-muted leading-[1.75] pt-1 max-w-[460px] text-center">
+          <p className="text-sm text-text-muted leading-[1.75] pt-1 max-w-115 text-center">
             The 2nd CCECC Conference exists to close a critical gap between
             research and reality — bringing local expertise into the rooms where
             energy decisions are made.
@@ -88,7 +88,7 @@ export function WhyNow() {
           {CARDS.map((card) => (
             <div
               key={card.id}
-              className="relative rounded-[14px] p-9 px-8 overflow-hidden transition-all duration-[250ms] cursor-default hover:-translate-y-1"
+              className="relative rounded-xl p-9 px-8 overflow-hidden transition-all duration-250 hover:-translate-y-1"
               style={{
                 backgroundColor: card.bgColor,
                 border: `1px solid ${card.borderColor}`,
@@ -102,30 +102,30 @@ export function WhyNow() {
             >
               {/* Large background number */}
               <div
-                className="absolute top-4 right-5 text-[5rem] font-black leading-none font-heading select-none"
+                className="absolute top-4 right-5 text-7xl font-black leading-none font-heading"
                 style={{ color: card.numberColor, opacity: 0.35 }}
               >
                 {card.number}
               </div>
 
               {/* Icon */}
-              <div className="mb-[18px]">{card.icon}</div>
+              <div className="mb-4">{card.icon}</div>
 
               {/* Label */}
               <p
-                className="text-[10.5px] font-bold tracking-[1px] uppercase mb-[7px]"
+                className="text-sm font-bold tracking-[1px] uppercase mb-1.75"
                 style={{ color: card.accentColor }}
               >
                 {card.label}
               </p>
 
               {/* Title */}
-              <h3 className="text-[1.15rem] font-bold text-text-main mb-3 font-heading leading-[1.3]">
+              <h3 className="text-lg font-bold text-text-main mb-3 font-heading leading-[1.3]">
                 {card.title}
               </h3>
 
               {/* Description */}
-              <p className="text-[0.88rem] text-text-light leading-[1.75]">
+              <p className="text-sm text-text-light leading-[1.75]">
                 {card.description}
               </p>
             </div>
