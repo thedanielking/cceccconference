@@ -1,5 +1,10 @@
-export function Fees() {
+import { Modal } from "./Modal";
+import { RegistrationModal } from "./RegistrationModal";
+
+export function Fees() {  
+
   return (
+    <Modal>
     <section id="fees" className="bg-bg-alt py-24 font-sans">
       <div className="max-w-[1280px] mx-auto px-8">
         {/* Section header */}
@@ -76,12 +81,13 @@ export function Fees() {
                 ))}
               </ul>
 
-              <a
-                href="#contact"
-                className="block bg-primary text-white py-3.5 px-6 rounded-lg no-underline text-sm font-bold text-center shadow-[0_4px_16px_rgba(46,204,113,0.3)] transition-all duration-200 hover:bg-primary-hover hover:shadow-[0_6px_22px_rgba(46,204,113,0.4)]"
-              >
-                Register at Early Bird Rate
-              </a>
+              <Modal.Open opens="register">
+                <button
+                  className="block bg-primary text-white py-2.5 px-5 rounded-[7px] text-sm font-semibold text-center w-full"
+                >
+                  Register at Early Rate
+                </button>
+              </Modal.Open>
             </div>
           </div>
 
@@ -142,12 +148,14 @@ export function Fees() {
                 ))}
               </ul>
 
-              <a
-                href="#contact"
-                className="block bg-transparent text-text-body py-3.5 px-6 rounded-lg no-underline text-sm font-semibold text-center border-[1.5px] border-[#d1d5db] transition-all duration-200 hover:border-primary-dark hover:text-primary-dark hover:bg-primary-light"
-              >
-                Register at Standard Rate
-              </a>
+              <Modal.Open opens="register">
+                <button
+                  className="block bg-transparent w-full text-text-body py-3.5 px-6 rounded-lg no-underline text-sm font-semibold text-center border-[1.5px] border-[#d1d5db] transition-all duration-200 hover:border-primary-dark hover:text-primary-dark hover:bg-primary-light"
+                >
+                  Register at Standard Rate
+                </button>
+              </Modal.Open>
+              
             </div>
           </div>
         </div>
@@ -161,5 +169,12 @@ export function Fees() {
         </p>
       </div>
     </section>
+
+      {/* Modal window definition */}
+      <Modal.Window name="register">
+        <RegistrationModal />
+      </Modal.Window>
+
+    </Modal>
   );
 }

@@ -1,106 +1,151 @@
-const PILLARS = [
+import { useState, useEffect, useCallback, useRef } from "react";
+
+const SLIDES = [
   {
     id: 1,
     name: "Clean Energy Technologies and Innovation",
     description:
       "Exploring breakthrough technologies in solar, wind, hydro, and storage that can accelerate clean energy deployment across Sub-Saharan Africa.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <circle cx="14" cy="14" r="6" stroke="#2ECC71" strokeWidth="2" />
-        <line x1="14" y1="2" x2="14" y2="6" stroke="#2ECC71" strokeWidth="2" strokeLinecap="round" />
-        <line x1="14" y1="22" x2="14" y2="26" stroke="#2ECC71" strokeWidth="2" strokeLinecap="round" />
-        <line x1="2" y1="14" x2="6" y2="14" stroke="#2ECC71" strokeWidth="2" strokeLinecap="round" />
-        <line x1="22" y1="14" x2="26" y2="14" stroke="#2ECC71" strokeWidth="2" strokeLinecap="round" />
-        <line x1="5.5" y1="5.5" x2="8.4" y2="8.4" stroke="#2ECC71" strokeWidth="1.8" strokeLinecap="round" />
-        <line x1="19.6" y1="19.6" x2="22.5" y2="22.5" stroke="#2ECC71" strokeWidth="1.8" strokeLinecap="round" />
-        <line x1="22.5" y1="5.5" x2="19.6" y2="8.4" stroke="#2ECC71" strokeWidth="1.8" strokeLinecap="round" />
-        <line x1="8.4" y1="19.6" x2="5.5" y2="22.5" stroke="#2ECC71" strokeWidth="1.8" strokeLinecap="round" />
-      </svg>
-    ),
+    image: "../slide1.jpg",
   },
   {
     id: 2,
     name: "Climate Change Mitigation and Adaptation Strategies",
     description:
       "Evidence-based approaches to reducing emissions and building resilient communities in the face of accelerating climate impacts.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <path d="M14 4C9 4 5 8 5 13c0 4 2.5 7.5 6 9" stroke="#2ECC71" strokeWidth="2" strokeLinecap="round" />
-        <path d="M14 4C19 4 23 8 23 13c0 4-2.5 7.5-6 9" stroke="#2ECC71" strokeWidth="2" strokeLinecap="round" />
-        <path d="M8 22l6 2 6-2" stroke="#2ECC71" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M14 4v20" stroke="#2ECC71" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="2 2" />
-        <path d="M5 13h18" stroke="#2ECC71" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="2 2" />
-      </svg>
-    ),
+    image: "../slide2.jpg",
   },
   {
     id: 3,
     name: "Energy Policy, Governance, and Regulation",
     description:
       "Examining the regulatory frameworks, governance structures, and policy instruments that enable or hinder clean energy transitions.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <rect x="4" y="4" width="20" height="20" rx="3" stroke="#2ECC71" strokeWidth="2" />
-        <line x1="8" y1="10" x2="20" y2="10" stroke="#2ECC71" strokeWidth="1.8" strokeLinecap="round" />
-        <line x1="8" y1="14" x2="17" y2="14" stroke="#2ECC71" strokeWidth="1.8" strokeLinecap="round" />
-        <line x1="8" y1="18" x2="14" y2="18" stroke="#2ECC71" strokeWidth="1.8" strokeLinecap="round" />
-      </svg>
-    ),
+    image: "../slide3.jpg",
   },
   {
     id: 4,
     name: "Sustainable Power Systems and Energy Efficiency",
     description:
       "Optimizing grid infrastructure, demand-side management, and energy efficiency measures to maximize impact of available resources.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <path d="M16 4l-8 12h8l-4 8 10-14h-8l4-6z" stroke="#2ECC71" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-      </svg>
-    ),
+    image: "../slide4.jpg",
   },
   {
     id: 5,
     name: "Environmental Impacts, Health, and Society",
     description:
       "Understanding how energy choices affect air quality, public health, ecosystems, and social equity across urban and rural communities.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <path d="M14 5C9 5 5 9 5 14s4 9 9 9 9-4 9-9-4-9-9-9z" stroke="#2ECC71" strokeWidth="2" />
-        <path d="M14 9v5l3 3" stroke="#2ECC71" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M8 20s1-4 3-5 5 0 6-3" stroke="#2ECC71" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-    ),
+    image: "../slide5.jpg",
   },
   {
     id: 6,
     name: "Financing, Investment, and Entrepreneurship",
     description:
       "Mobilizing climate finance, blended capital, green bonds, and entrepreneurial ecosystems to fund clean energy at scale.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <path d="M14 4v4M14 20v4M6 14H4M24 14h-2" stroke="#2ECC71" strokeWidth="2" strokeLinecap="round" />
-        <circle cx="14" cy="14" r="5" stroke="#2ECC71" strokeWidth="2" />
-        <path d="M12 13c0-1.1.9-2 2-2s2 .9 2 2-.9 2-2 2-2 .9-2 2 .9 2 2 2 2-.9 2-2" stroke="#2ECC71" strokeWidth="1.8" strokeLinecap="round" />
-      </svg>
-    ),
+    image: "../slide6.jpg",
   },
   {
     id: 7,
     name: "Regional and Local Perspectives on Climate Action",
     description:
       "Centering African voices and locally-grounded solutions — ensuring that policy and practice reflect the lived realities of those most affected.",
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <circle cx="14" cy="14" r="9" stroke="#2ECC71" strokeWidth="2" />
-        <path d="M5 14h18M14 5c-3 3-4 6-4 9s1 6 4 9M14 5c3 3 4 6 4 9s-1 6-4 9" stroke="#2ECC71" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-    ),
+    image: "../slide7.jpg",
   },
 ];
 
+const AUTO_SLIDE_INTERVAL = 5000;
+const TRANSITION_DURATION = 500;
+
 export function ActionPillars() {
+  const [current, setCurrent] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(true);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchDelta, setTouchDelta] = useState(0);
+  const timerRef = useRef<number | null>(null);
+  const trackRef = useRef<HTMLDivElement | null>(null);
+
+  const total = SLIDES.length;
+
+  const goTo = useCallback(
+    (index: number) => {
+      if (index < 0) {
+        setIsTransitioning(false);
+        setCurrent(total);
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            setIsTransitioning(true);
+            setCurrent(total - 1);
+          });
+        });
+      } else if (index >= total) {
+        setIsTransitioning(false);
+        setCurrent(-1);
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            setIsTransitioning(true);
+            setCurrent(0);
+          });
+        });
+      } else {
+        setIsTransitioning(true);
+        setCurrent(index);
+      }
+    },
+    [total]
+  );
+
+  const next = useCallback(() => goTo(current + 1), [current, goTo]);
+  const prev = useCallback(() => goTo(current - 1), [current, goTo]);
+
+  useEffect(() => {
+    timerRef.current = setInterval(next, AUTO_SLIDE_INTERVAL);
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, [next]);
+
+  const resetTimer = () => {
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(next, AUTO_SLIDE_INTERVAL);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.touches[0].clientX);
+    setTouchDelta(0);
+    if (timerRef.current) clearInterval(timerRef.current);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (touchStart === null) return;
+    const delta = e.touches[0].clientX - touchStart;
+    setTouchDelta(delta);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStart === null) return;
+    const threshold = 60;
+    if (touchDelta > threshold) {
+      prev();
+    } else if (touchDelta < -threshold) {
+      next();
+    }
+    setTouchStart(null);
+    setTouchDelta(0);
+    resetTimer();
+  };
+
+  const handleMouseEnter = () => {
+    if (timerRef.current) clearInterval(timerRef.current);
+  };
+  const handleMouseLeave = () => {
+    resetTimer();
+  };
+
+  const visualIndex = current < 0 ? total - 1 : current >= total ? 0 : current;
+
+  const extendedSlides = [SLIDES[total - 1], ...SLIDES, SLIDES[0]];
+
   return (
-    <section id="pillars" className="bg-white py-24 font-sans">
+    <section id="pillars" className="bg-white py-24 font-sans overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-8">
         {/* Section header */}
         <div className="text-center mb-14">
@@ -117,37 +162,119 @@ export function ActionPillars() {
           </p>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-5">
-          {PILLARS.map((pillar) => (
-            <PillarCard key={pillar.id} pillar={pillar} />
-          ))}
+        {/* Slider */}
+        <div
+          className="relative rounded-2xl overflow-hidden bg-white shadow-[0_8px_40px_rgba(0,0,0,0.06)]"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          {/* Track */}
+          <div
+            ref={trackRef}
+            className="flex"
+            style={{
+              transform: `translateX(calc(-${(current + 1) * 100}% + ${touchDelta}px))`,
+              transition: isTransitioning && touchDelta === 0 ? `transform ${TRANSITION_DURATION}ms cubic-bezier(0.4, 0, 0.2, 1)` : "none",
+            }}
+          >
+            {extendedSlides.map((slide, i) => (
+              <div
+                key={`${slide.id}-${i}`}
+                className="w-full shrink-0 flex flex-col min-[800px]:flex-row"
+              >
+                {/* Image side */}
+                <div className="relative w-full min-[800px]:w-[55%] aspect-[4/3] min-[800px]:aspect-auto min-[800px]:min-h-[420px] bg-[#f3f4f6] overflow-hidden">
+                  <img
+                    src={slide.image}
+                    alt={slide.name}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    loading={i === 1 || i === 2 ? "eager" : "lazy"}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent min-[800px]:bg-gradient-to-r" />
+                  
+                  <div className="absolute top-5 left-5 bg-white/90 backdrop-blur-sm border border-primary-faint rounded-lg px-3 py-1.5">
+                    <span className="text-xs font-bold text-primary-dark font-heading">
+                      Pillar {slide.id < 10 ? `0${slide.id}` : slide.id}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Text side */}
+                <div className="w-full min-[800px]:w-[45%] p-8 min-[800px]:p-10 flex flex-col justify-center">
+                  <div className="w-[52px] h-[52px] bg-primary-light border border-primary-faint rounded-xl flex items-center justify-center mb-5 shrink-0">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#155724" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                    </svg>
+                  </div>
+
+                  <h3 className="text-[1.15rem] min-[800px]:text-[1.35rem] font-bold text-text-main leading-[1.3] mb-3 font-heading">
+                    {slide.name}
+                  </h3>
+
+                  <p className="text-[0.9rem] text-text-muted leading-[1.75] mb-6">
+                    {slide.description}
+                  </p>
+
+                  <div className="flex items-center gap-2 text-xs font-semibold text-primary tracking-[0.5px] uppercase">
+                    <span className="w-8 h-[2px] bg-primary rounded-full" />
+                    Sub-Theme {slide.id} of {total}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Navigation arrows */}
+          <button
+            onClick={() => { prev(); resetTimer(); }}
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 backdrop-blur-sm border border-border-default flex items-center justify-center text-text-body shadow-[0_2px_12px_rgba(0,0,0,0.08)] transition-all duration-200 hover:bg-primary hover:text-white hover:border-primary hover:shadow-[0_4px_16px_rgba(46,204,113,0.3)] z-10 max-[600px]:hidden"
+            aria-label="Previous slide"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+
+          <button
+            onClick={() => { next(); resetTimer(); }}
+            className="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 backdrop-blur-sm border border-border-default flex items-center justify-center text-text-body shadow-[0_2px_12px_rgba(0,0,0,0.08)] transition-all duration-200 hover:bg-primary hover:text-white hover:border-primary hover:shadow-[0_4px_16px_rgba(46,204,113,0.3)] z-10 max-[600px]:hidden"
+            aria-label="Next slide"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+
+          {/* Dot indicators */}
+          <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10">
+            {SLIDES.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => { goTo(i); resetTimer(); }}
+                className={`transition-all duration-300 rounded-full ${
+                  i === visualIndex
+                    ? "w-8 h-2 bg-primary"
+                    : "w-2 h-2 bg-white/70 border border-white/40 hover:bg-white"
+                }`}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
+          </div>
+
+          {/* Progress bar */}
+          <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-border-light">
+            <div
+              className="h-full bg-primary transition-all duration-300"
+              style={{
+                width: `${((visualIndex + 1) / total) * 100}%`,
+              }}
+            />
+          </div>
         </div>
       </div>
     </section>
-  );
-}
-
-function PillarCard({ pillar }: { pillar: (typeof PILLARS)[number] }) {
-  return (
-    <div className="bg-white border border-border-default rounded-xl p-7 px-[26px] flex flex-col gap-3 transition-all duration-[220ms] cursor-default relative overflow-hidden hover:border-primary hover:-translate-y-1 hover:shadow-[0_12px_36px_rgba(21,87,36,0.1)] hover:bg-[#f9fffe]">
-      {/* Pillar number */}
-      <div className="absolute top-4 right-[18px] text-[11px] font-bold text-primary-faint tracking-[0.5px] font-heading">
-        0{pillar.id}
-      </div>
-
-      {/* Icon in pill */}
-      <div className="w-[52px] h-[52px] bg-primary-light border border-primary-faint rounded-xl flex items-center justify-center shrink-0">
-        {pillar.icon}
-      </div>
-
-      <h3 className="text-[0.95rem] font-bold text-text-main leading-[1.35] font-heading">
-        {pillar.name}
-      </h3>
-
-      <p className="text-[0.84rem] text-text-muted leading-[1.7]">
-        {pillar.description}
-      </p>
-    </div>
   );
 }
