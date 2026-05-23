@@ -54,10 +54,10 @@ const HIGHLIGHTS = [
   ];
   
   const PARTNERS = [
-    { abbr: "BU", name: "Bowen University" , logo: "../BUlogo.jpg" },
-    { abbr: "NUC", name: "Natl. Universities Commission", logo: "../NUClogo.jpg" },
-    { abbr: "PTDF", name: "PTDF", logo: "../PDTFlogo.jpg" },
-    { abbr: "TETF", name: "TETFund", logo: "TETFundlogo.jpg" },
+    { abbr: "BU", name: "Bowen University" , logo: "../ww1.png" },
+    { abbr: "NUC", name: "Natl. Universities Commission", logo: "../ww2.png" },
+    { abbr: "PTDF", name: "PTDF", logo: "../ww3.png" },
+    { abbr: "TETF", name: "TETFund", logo: "../ww4.png" },
   ];
   
   const EDITIONS = [
