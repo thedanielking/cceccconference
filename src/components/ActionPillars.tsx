@@ -6,49 +6,49 @@ const SLIDES = [
     name: "Clean Energy Technologies and Innovation",
     description:
       "Exploring breakthrough technologies in solar, wind, hydro, and storage that can accelerate clean energy deployment across Sub-Saharan Africa.",
-    image: "../slide1.jpg",
+    image: "../slide1.webp",
   },
   {
     id: 2,
     name: "Climate Change Mitigation and Adaptation Strategies",
     description:
       "Evidence-based approaches to reducing emissions and building resilient communities in the face of accelerating climate impacts.",
-    image: "../slide2.jpg",
+    image: "../slide2.webp",
   },
   {
     id: 3,
     name: "Energy Policy, Governance, and Regulation",
     description:
       "Examining the regulatory frameworks, governance structures, and policy instruments that enable or hinder clean energy transitions.",
-    image: "../slide3.jpg",
+    image: "../slide3.webp",
   },
   {
     id: 4,
     name: "Sustainable Power Systems and Energy Efficiency",
     description:
       "Optimizing grid infrastructure, demand-side management, and energy efficiency measures to maximize impact of available resources.",
-    image: "../slide4.jpg",
+    image: "../slide4.webp",
   },
   {
     id: 5,
     name: "Environmental Impacts, Health, and Society",
     description:
       "Understanding how energy choices affect air quality, public health, ecosystems, and social equity across urban and rural communities.",
-    image: "../slide5.jpg",
+    image: "../slide5.webp",
   },
   {
     id: 6,
     name: "Financing, Investment, and Entrepreneurship",
     description:
       "Mobilizing climate finance, blended capital, green bonds, and entrepreneurial ecosystems to fund clean energy at scale.",
-    image: "../slide6.jpg",
+    image: "../slide6.webp",
   },
   {
     id: 7,
     name: "Regional and Local Perspectives on Climate Action",
     description:
       "Centering African voices and locally-grounded solutions — ensuring that policy and practice reflect the lived realities of those most affected.",
-    image: "../slide7.jpg",
+    image: "../slide7.webp",
   },
 ];
 

@@ -6,7 +6,7 @@ export function Hero() {
       className="relative w-full min-h-screen flex items-center overflow-hidden font-sans"
     >
       {/* Background Image */}
-      <div className="absolute inset-0 bg-[url('../bgCleanEnergy.jpg')] bg-cover bg-position-[center_40%] bg-no-repeat" />
+      <div className="absolute inset-0 bg-[url('../bgCleanEnergy.webp')] bg-cover bg-position-[center_40%] bg-no-repeat" />
 
       {/* Layered overlay */}
       <div
@@ -24,7 +24,7 @@ export function Hero() {
       <div className="relative mx-auto px-8 pt-27.5 pb-20 w-full">
         <div className="max-w-200">
           {/* Conference edition badge */}
-          <div className="flex w-fit items-center gap-2 ring ring-primary-dark rounded px-3.5 py-1.5 mb-7 bg-white/85">
+          <div className="flex w-fit mx-auto lg:mx-0 items-center gap-2 ring ring-primary-dark rounded px-3.5 py-1.5 mb-7 bg-white/85">
             <div className="w-1.5 h-1.5 rounded-full bg-primary" />
             <span className="text-[11px] font-bold text-primary-dark tracking-wider uppercase">
               2nd National Conference &nbsp;·&nbsp; Hybrid Mode
