@@ -40,7 +40,7 @@ const HIGHLIGHTS = [
       ),
     },
     {
-      value: "∞",
+      value: "4",
       unit: "",
       label: "Publication Outlets",
       sub: "Validated & indexed",
@@ -100,8 +100,8 @@ const HIGHLIGHTS = [
   
   export function PastConferences() {
     return (
-      <section className="bg-bg-alt py-24 font-sans border-t border-border-light">
-        <div className="px-8">
+      <section id="history" className="bg-bg-alt  py-24 font-sans border-t border-border-light">
+        <div className="px-8 lg:px-20">
           {/* Section header */}
           <div className="flex items-end justify-between gap-6 mb-12 flex-wrap">
             <div>

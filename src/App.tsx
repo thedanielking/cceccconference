@@ -1,36 +1,21 @@
-import { Modal } from "./components/Modal";
-import { Header } from "./components/Header";
-import { Hero } from "./components/Hero";
-import { WhyNow } from "./components/WhyNow";
-import { PastConferences } from "./components/PastConferences";
-import { Proceedings } from "./components/Proceedings";
-import { AbstractsTimeline } from "./components/AbstractsTimeline";
-import { ActionPillars } from "./components/ActionPillars";
-import { Fees } from "./components/Fees";
-import { FinalCTA } from "./components/FinalCTA";
-import { Footer } from "./components/Footer";
-import { RegistrationModal } from "./components/RegistrationModal";
+import { BrowserRouter, Routes, Route } from "react-router";
+import { AppLayout } from "./components/AppLayout";
+import { ScrollToHash } from "./components/ScrollToHash"; // <-- add
+import Homepage from "./pages/Homepage";
+import { News } from "./pages/News";
+import { Speakers } from "./pages/Speakers";
 
 export default function App() {
   return (
-    <Modal>
-      <div className="min-h-screen bg-white font-sans overflow-x-hidden">
-        <Header />
-        <Hero />
-        <WhyNow />
-        <PastConferences />
-        <Proceedings />
-        <AbstractsTimeline />
-        <ActionPillars />
-        <Fees />
-        <FinalCTA />
-        <Footer />
-      </div>
-
-      {/* Modal windows defined at app level */}
-      <Modal.Window name="register">
-        <RegistrationModal />
-      </Modal.Window>
-    </Modal>
+    <BrowserRouter>
+      <ScrollToHash /> {/* <-- add here */}
+      <Routes>
+        <Route element={<AppLayout />}>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/speakers" element={<Speakers />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }

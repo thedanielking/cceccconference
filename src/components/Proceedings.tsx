@@ -4,11 +4,10 @@ const VOLUME = {
     year: "2026",
     edition: "1st National Conference on Clean Energy and Climate Change",
     publishedDate: "June 15, 2026",
-    editors: ["Prof. Moses Emetere"],
-    pages: "312 pp.",
+    Authors: ["Ani et al (1-9)", "Osa et al (10-23)", "Adumene et all (24-31)", "Olabemiwo & Okekunle (32-41)", "Ijaola et all (42-3)", "Ademuluyi (54-69)", "Lamidi (70-90)" ],
+    pages: "90 pp.",
     indexedIn: ["Google Scholar", "Scopus-Pending", "African Journals Online"],
-    isbn: "978-XXX-XXXX-XX-X",
-    doi: "10.XXXXX/nccecc.2026",
+    doi: "10.XXXXXX/nccecc.2026",
     abstract:
       "This volume collects peer-reviewed papers presented at the 1st National Conference on Clean Energy and Climate Change, hosted at Bowen University (Online Mode), 15th–16th April 2026. Research spans solar energy deployment, climate policy, green finance, and community resilience strategies across Sub-Saharan Africa.",
   };
@@ -18,13 +17,12 @@ const VOLUME = {
   const METADATA = [
     { label: "Published", value: VOLUME.publishedDate },
     { label: "Pages", value: VOLUME.pages },
-    { label: "ISBN", value: VOLUME.isbn },
     { label: "DOI", value: VOLUME.doi },
   ];
   
   export function Proceedings() {
     return (
-      <section className="bg-white py-24 font-sans border-t border-border-light">
+      <section id="publication" className="bg-white py-24 font-sans border-t border-border-light">
         <div className="px-8">
           {/* Section header */}
           <div className="text-center mb-12">
@@ -111,13 +109,13 @@ const VOLUME = {
                   </p>
                 </div>
   
-                {/* Editors */}
+                {/* Authors */}
                 <div className="mb-5 pb-5 border-b border-border-light">
                   <p className="text-[9.5px] font-bold text-text-faint tracking-[0.8px] uppercase mb-2">
-                    Editors
+                    Authors
                   </p>
                   <div className="flex gap-2 flex-wrap">
-                    {VOLUME.editors.map((ed) => (
+                    {VOLUME.Authors.map((ed) => (
                       <span
                         key={ed}
                         className="bg-[#f9fafb] border border-border-default rounded-md px-3 py-1 text-xs font-medium text-text-body"

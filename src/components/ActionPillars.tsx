@@ -146,7 +146,7 @@ export function ActionPillars() {
 
   return (
     <section id="pillars" className="bg-white py-24 font-sans overflow-hidden">
-      <div className="px-8">
+      <div className="px-8 lg:px-20">
         {/* Section header */}
         <div className="text-center mb-14">
           <p className="text-[11px] font-bold text-primary tracking-widest uppercase mb-2.5">

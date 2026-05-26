@@ -14,8 +14,8 @@ const NAV_SECTIONS: Record<string, NavLink[]> = {
   ],
   Submissions: [
     { label: "Go to Google Form", href: "https://forms.gle/p8GGUnL6QCdrogsi8", external: true },
-    { label: "Round 1 Deadline: Nov 15, 2026", href: "#timeline" },
-    { label: "Round 2 Deadline: Mar 1, 2027", href: "#timeline" },
+    { label: "Round 1 Deadline: Oct 15, 2026", href: "#timeline" },
+    { label: "Round 2 Deadline: Dec 02, 2026", href: "#timeline" },
     { label: "Acceptance Notifications", href: "#timeline" },
   ],
   Conference: [
@@ -58,7 +58,7 @@ const SOCIAL = [
 export function Footer() {
   return (
     <footer id="contact" className="bg-text-main text-white font-sans">
-      <div className="px-8 pt-18">
+      <div className="px-8 lg:px-20 pt-18">
         <div className="grid grid-cols-[1.8fr_1fr_1fr_1fr] gap-12 mb-15 max-[960px]:grid-cols-2 max-[560px]:grid-cols-1">
           {/* Brand column */}
           <div>

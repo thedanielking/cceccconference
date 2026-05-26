@@ -65,15 +65,15 @@ const CARDS = [
 export function WhyNow() {
   return (
     <section id="about" className="bg-white py-24 font-sans">
-      <div className="px-8">
+      <div className="px-8 lg:px-20">
         {/* Section header */}
         <div className="flex flex-col items-center mb-14 flex-wrap">
           <div>
             <p className="text-[11px] font-bold text-primary tracking-widest uppercase text-center mb-2.5">
-              Why Attend
+              Empowering Clean Energy
             </p>
-            <h2 className="text-[clamp(1.7rem,3vw,2.5rem)] font-extrabold text-text-main tracking-[-0.5px] leading-[1.15] text-center font-heading max-w-115">
-              The Mission Behind the Conference
+            <h2 className="text-[clamp(1.7rem,3vw,2.5rem)] font-extrabold text-text-main tracking-[-0.5px] leading-[1.15] text-center font-heading max-w-115 capitalize">
+              A national dialogue on sustainability
             </h2>
           </div>
           <p className="text-sm text-text-muted leading-[1.75] pt-1 max-w-115 text-center">
@@ -83,54 +83,21 @@ export function WhyNow() {
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-6">
-          {CARDS.map((card) => (
-            <div
-              key={card.id}
-              className="relative rounded-xl p-9 px-8 overflow-hidden transition-all duration-250 hover:-translate-y-1"
-              style={{
-                backgroundColor: card.bgColor,
-                border: `1px solid ${card.borderColor}`,
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLDivElement).style.boxShadow = `0 16px 44px ${card.accentColor}1a`;
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLDivElement).style.boxShadow = "none";
-              }}
-            >
-              {/* Large background number */}
-              <div
-                className="absolute top-4 right-5 text-7xl font-black leading-none font-heading"
-                style={{ color: card.numberColor, opacity: 0.35 }}
-              >
-                {card.number}
-              </div>
+        <div className="flex flex-col-reverse gap-4 lg:flex-row lg:gap-10 lg:items-stretch">
+          <div className="space-y-4 flex-1">
+            <p className="leading-relaxed">Research findings from researchers in third-world countries end up on the shelf. Only very few findings from third-world countries made it to the limelight via personal efforts, which are uncommon in academia. Due to no access to the findings on the shelves, national policymakers, industries and governments have continually relied on globalized findings. Unfortunately, when it comes to clean energy and climate change, the localized findings are more realistic for policymakers, industries and governments. The mandate of this conference is to gather the localized findings and communicate them to stakeholders in order to foster a more inclusive approach to bridging the gap between local knowledge and global practices, ultimately leading to more sustainable and effective solutions. Join us at the National Conference on Clean Energy and Climate Change that is organized by the Cluster for Clean Energy and Climate Change (CCECC), where we unite experts, researchers, and policymakers to address critical issues surrounding clean energy solutions and climate resilience in sub-Saharan Africa.</p>
+            <a href="#contact" className="ring ring-green-800 rounded px-3 py-1 text-green-900 ">Get in touch</a>
+          </div>
+          <div className="flex-1 h-64 lg:h-auto flex">
+             <img
+                src="./elders.jpg"
+                alt="elders sitting"
+                className="w-full h-full object-cover rounded"
+              />
+          </div>
 
-              {/* Icon */}
-              <div className="mb-4">{card.icon}</div>
-
-              {/* Label */}
-              <p
-                className="text-sm font-bold tracking-[1px] uppercase mb-1.75"
-                style={{ color: card.accentColor }}
-              >
-                {card.label}
-              </p>
-
-              {/* Title */}
-              <h3 className="text-lg font-bold text-text-main mb-3 font-heading leading-[1.3]">
-                {card.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-sm text-text-light leading-[1.75]">
-                {card.description}
-              </p>
-            </div>
-          ))}
         </div>
+        
       </div>
     </section>
   );

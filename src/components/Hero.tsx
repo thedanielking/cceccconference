@@ -21,7 +21,7 @@ export function Hero() {
       <div className="absolute bottom-0 left-0 right-0 h-10 bg-linear-to-t from-white/10 to-transparent" />
 
       {/* Content */}
-      <div className="relative mx-auto px-8 pt-27.5 pb-20 w-full">
+      <div className="relative mx-auto px-8 lg:px-20 pt-27.5 pb-20 w-full">
         <div className="max-w-200">
           {/* Conference edition badge */}
           <div className="flex w-fit mx-auto lg:mx-0 items-center gap-2 ring ring-primary-dark rounded px-3.5 py-1.5 mb-7 bg-white/85">
@@ -46,6 +46,14 @@ export function Hero() {
               <line x1="3" y1="10" x2="21" y2="10" />
             </svg>
             April 15–16, 2027
+          </div>
+
+          <div className="flex items-center justify-center w-fit mx-auto gap-2 text-primary-dark/80 bg-primary-light/40 rounded px-2.5 py-1.5 mb-5 text-xs font-medium lg:mx-0">
+             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary-dark/60">
+             <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z" />
+             <circle cx="12" cy="10" r="3" />
+             </svg>
+             Olagbemiro Library, Bowen University, Iwo, Nigeria.
           </div>
 
           {/* Theme */}

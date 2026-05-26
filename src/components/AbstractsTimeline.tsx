@@ -3,7 +3,7 @@ import { TimelineStep } from "./ui/TimelineStep";
 const TIMELINE_ITEMS = [
   {
     id: 1,
-    date: "Nov. 15, 2026",
+    date: "Oct. 15, 2026",
     label: "First Round Abstract Submission",
     description:
       "Submit your original abstract for the first review round. We welcome research from all disciplines aligned with the conference sub-themes.",
@@ -15,59 +15,95 @@ const TIMELINE_ITEMS = [
   },
   {
     id: 2,
-    date: "Feb. 28, 2027",
+    date: "Dec. 01, 2026",
     label: "Notification of Acceptance",
     description:
       "Authors of Round 1 submissions will be notified of review outcomes and provided feedback to strengthen their work.",
     type: "notification",
-    round: "Round 1",
+    round: "Round 2",
     color: "#0ea5e9",
     bg: "#f0f9ff",
     border: "#bae6fd",
   },
   {
     id: 3,
-    date: "Mar. 01, 2027",
-    label: "Second Round Abstract Submission",
+    date: "Dec. 02, 2026",
+    label: "Full Paper Submission",
     description:
-      "A second submission window opens for researchers who missed Round 1 or wish to submit additional work.",
+      "A full paper submission window opens for researchers to submit the full paper of the round 2.",
     type: "submission",
-    round: "Round 2",
+    round: "Round 3",
     color: "#2ECC71",
     bg: "#f0fff4",
     border: "#86efac",
   },
   {
     id: 4,
-    date: "Mar. 20, 2027",
+    date: "Dec. 02, 2026",
+    label: "Second Round Abstract Submission",
+    description:
+      "A second submission window opens for researchers who missed Round 1.",
+    type: "submission",
+    round: "Round 4",
+    color: "#2ECC71",
+    bg: "#f0fff4",
+    border: "#86efac",
+  },
+  {
+    id: 5,
+    date: "Jan. 02, 2027",
     label: "Notification of Acceptance",
     description:
-      "Final acceptance notifications for Round 2 submissions. Accepted authors receive guidance on full paper preparation.",
+      "Authors of Round 4 submissions will be notified of review outcomes and provided feedback to strengthen their work.",
     type: "notification",
-    round: "Round 2",
+    round: "Round 5",
     color: "#0ea5e9",
     bg: "#f0f9ff",
     border: "#bae6fd",
   },
   {
-    id: 5,
-    date: "Apr. 15–16, 2027",
-    label: "Conference Day",
+    id: 6,
+    date: "Jan. 03, 2026",
+    label: "Full Paper Submission",
     description:
-      "Present your work at the 2nd National Conference on Clean Energy and Climate Change. Hybrid format — in-person and virtual participation.",
-    type: "event",
-    round: "Summit",
-    color: "#155724",
+      "A full paper submission window opens for researchers to submit the full paper of the round 5.",
+    type: "submission",
+    round: "Round 6",
+    color: "#2ECC71",
     bg: "#f0fff4",
-    border: "#2ECC71",
-    isMain: true,
+    border: "#86efac",
   },
+  {
+    id: 7,
+    date: "Mar. 10, 2027",
+    label: "Notification of Acceptance",
+    description:
+      "Final acceptance notifications for all submissions. Accepted authors receive guidance on full paper preparation.",
+    type: "notification",
+    round: "Round 7",
+    color: "#0ea5e9",
+    bg: "#f0f9ff",
+    border: "#bae6fd",
+  },
+  // {
+  //   id: 5,
+  //   date: "Apr. 15–16, 2027",
+  //   label: "Conference Day",
+  //   description:
+  //     "Present your work at the 2nd National Conference on Clean Energy and Climate Change. Hybrid format — in-person and virtual participation.",
+  //   type: "event",
+  //   round: "Summit",
+  //   color: "#155724",
+  //   bg: "#f0fff4",
+  //   border: "#2ECC71",
+  //   isMain: true,
+  // },
 ];
 
 export function AbstractsTimeline() {
   return (
     <section id="timeline" className="bg-bg-alt py-24 font-sans">
-      <div className="px-8">
+      <div className="px-8 lg:px-20">
         {/* Section header */}
         <div className="text-center mb-15">
           <p className="text-[11px] font-bold text-primary tracking-widest uppercase mb-2.5">
@@ -84,7 +120,7 @@ export function AbstractsTimeline() {
         </div>
 
         {/* Timeline steps */}
-        <div className="relative grid grid-cols-5 gap-0 mb-12 max-[820px]:grid-cols-2 max-[820px]:gap-5 max-[400px]:grid-cols-1">
+        <div className="relative grid grid-cols-7 gap-0 mb-12 max-[820px]:grid-cols-2 max-[820px]:gap-5 max-[400px]:grid-cols-1">
           {/* Connector line */}
           <div className="absolute top-7 left-[10%] right-[10%] h-0.5 bg-primary-faint z-0 max-[820px]:hidden" />
 
