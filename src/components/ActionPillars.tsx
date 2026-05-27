@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from "react";
+import { FadeUp } from "./ui/FadeUp";
 
 const SLIDES = [
   {
@@ -146,6 +147,7 @@ export function ActionPillars() {
 
   return (
     <section id="pillars" className="bg-white py-24 font-sans overflow-hidden">
+      <FadeUp delay={1} duration={0.5}>
       <div className="px-8 lg:px-20">
         {/* Section header */}
         <div className="text-center mb-14">
@@ -275,6 +277,7 @@ export function ActionPillars() {
           </div>
         </div>
       </div>
+      </FadeUp>
     </section>
   );
 }

@@ -1,3 +1,5 @@
+import { FadeUp } from "./ui/FadeUp";
+
 const SPEAKERS = [
   { id: 2, name: "Vincent Anayochukwu Ani", title: "Speaker", affiliation: "", initials: "VA", avatar: "../Picture2.png", institution: "../logo1.png", color: "#2ECC71" },
   { id: 3, name: "Ozioko Anthonia Taiwo", title: "Speaker", affiliation: "", initials: "OT", avatar: "../Picture6.png", institution: "../logo1.png", color: "#1a8a4a" },
@@ -56,8 +58,9 @@ const LOGOS = [
 
 export function SpeakerGallery() {
   return (
-    <section id="speakers" className="bg-white py-[100px] font-sans">
-      <div className="max-w-[1280px] mx-auto px-8">
+    <section id="speakers" className="bg-white py-10 font-sans">
+      <FadeUp>
+      <div className="mx-auto px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-primary-light border border-primary rounded-full px-4 py-1.5 mb-5">
@@ -68,15 +71,17 @@ export function SpeakerGallery() {
           <h2 className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-extrabold text-[#0d2e17] tracking-[-0.5px] mb-4 font-heading">
             Voices of Authority
           </h2>
-          <p className="text-[1.05rem] text-[#5a7a62] max-w-[520px] mx-auto leading-[1.7]">
+          <p className="text-[1.05rem] text-[#5a7a62] max-w-130 mx-auto leading-[1.7]">
             Our speakers represent Nigeria's leading academic institutions, government ministries, and development organizations.
           </p>
         </div>
 
         {/* Speaker Grid */}
-        <div className="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] gap-6 mb-[72px]">
-          {SPEAKERS.map((speaker) => (
-            <SpeakerCard key={speaker.id} speaker={speaker} />
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] gap-6 mb-18">
+          {SPEAKERS.map((speaker, id) => (
+            <FadeUp delay={Number(`0.${id}`)}>
+              <SpeakerCard key={speaker.id} speaker={speaker} />
+            </FadeUp>
           ))}
         </div>
 
@@ -89,7 +94,7 @@ export function SpeakerGallery() {
             {LOGOS.map((logo) => (
               <div
                 key={logo.name}
-                className="px-[22px] py-2.5 border border-primary-faint rounded-lg bg-[#f9fffe] text-[13px] font-bold text-primary-dark tracking-[0.5px] transition-all duration-200 hover:bg-primary-light hover:border-primary"
+                className="px-5.5 py-2.5 border border-primary-faint rounded-lg bg-[#f9fffe] text-[13px] font-bold text-primary-dark tracking-[0.5px] transition-all duration-200 hover:bg-primary-light hover:border-primary"
               >
                 {logo.abbr}
               </div>
@@ -97,13 +102,14 @@ export function SpeakerGallery() {
           </div>
         </div>
       </div>
+      </FadeUp>
     </section>
   );
 }
 
 function SpeakerCard({ speaker }: { speaker: (typeof SPEAKERS)[number] }) {
   return (
-    <div className="bg-white border border-primary-faint rounded-2xl p-7 px-6 text-center transition-all duration-[250ms] cursor-default hover:-translate-y-[5px] hover:shadow-[0_12px_36px_rgba(21,87,36,0.1)] hover:border-primary">
+    <div className="bg-white border border-primary-faint rounded-2xl p-7 px-6 text-center transition-all duration-250 cursor-default hover:-translate-y-1.25 hover:shadow-[0_12px_36px_rgba(21,87,36,0.1)] hover:border-primary">
       {/* Avatar */}
       <div
         className="w-20 h-20 overflow-hidden rounded-full mx-auto mb-4 flex items-center justify-center text-[1.3rem] font-bold text-white font-heading border-[3px]"
@@ -126,7 +132,7 @@ function SpeakerCard({ speaker }: { speaker: (typeof SPEAKERS)[number] }) {
       ? <div className="w-9 h-9 mx-auto">
         <img src={speaker.institution} className="w-full h-full" alt={speaker.affiliation} /> 
       </div>
-      : <div className="inline-block bg-primary-light border border-primary-faint rounded-full px-3 py-[3px] text-[11px] font-semibold text-primary-dark">
+      : <div className="inline-block bg-primary-light border border-primary-faint rounded-full px-3 py-0.75 text-[11px] font-semibold text-primary-dark">
       <p>{speaker.affiliation}</p>
     </div>
       }

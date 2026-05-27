@@ -1,3 +1,4 @@
+import { FadeUp } from "./ui/FadeUp";
 
 export function Hero() {
   return (
@@ -32,12 +33,15 @@ export function Hero() {
           </div>
 
           {/* Main headline */}
+          <FadeUp delay={0.3} duration={1}>
           <h1 className="text-[clamp(1.9rem,4vw,3.1rem)] font-extrabold text-text-main leading-[1.13] tracking-[-0.8px] mb-4.5 font-heading text-center lg:text-left">
             2nd National Conference on{" "}
             <span className="text-primary-dark">Clean Energy and Climate Change</span>
           </h1>
+          </FadeUp>
 
           {/* Date strip */}
+          <FadeUp delay={0.5} duration={1}>
           <div className="flex items-center justify-center w-fit mx-auto gap-2.5 bg-primary-dark text-white rounded-md px-4 py-2 mb-5 text-sm font-semibold lg:mx-0">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
               <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
@@ -83,11 +87,12 @@ export function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 bg-white/90 text-primary-dark px-7 py-3.5 rounded-lg no-underline text-sm font-semibold border-2 border-primary-dark transition-all duration-200 hover:bg-primary-light hover:-translate-y-0.5 backdrop-blur-sm"
-            >
+              >
               Submit Your Paper
             </a>
           </div>
 
+      </FadeUp>
           {/* Inline note */}
           <p className="mt-5 text-xs text-black lg:text-text-muted flex items-center gap-1.5">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#222422" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

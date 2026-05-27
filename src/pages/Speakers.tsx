@@ -1,4 +1,5 @@
 import { SpeakerGallery } from "../components/SpeakerGallery";
+import { FadeUp } from "../components/ui/FadeUp";
 
 export function Speakers(){
     return (
@@ -8,7 +9,7 @@ export function Speakers(){
       className="relative w-full h-90 flex items-center overflow-hidden font-sans"
     >
       {/* Background Image */}
-      <div className="absolute inset-0 bg-[url('../slide5.webp')] bg-cover bg-position-[center_40%] bg-no-repeat" />
+      <div className="absolute inset-0 bg-[url('../bgSpeakers.jpg')] bg-cover bg-position-[center_40%] bg-no-repeat" />
 
       {/* Layered overlay */}
       <div
@@ -28,11 +29,16 @@ export function Speakers(){
           
 
           {/* Main headline */}
+          <FadeUp delay={0.3} >
           <h1 className="text-[clamp(1.9rem,4vw,3.1rem)] font-extrabold text-text-main leading-[1.13] tracking-[-0.8px] mb-4.5 font-heading ">             
              Conference{" "}
             <span className="text-primary-dark">Speakers</span>
           </h1> 
+          </FadeUp>
+
+          <FadeUp delay={0.5}>
           <p className="italic">Let's talk about the future</p>     
+          </FadeUp>
 
           
         </div>
@@ -40,12 +46,13 @@ export function Speakers(){
 
       {/* Scroll hint */}
       <div className="absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 opacity-50">
-        <div className="w-[18px] h-7 border-2 border-primary-dark rounded-[9px] flex justify-center pt-1">
-          <div className="w-[3px] h-[5px] bg-primary rounded-sm animate-scroll-dot" />
+        <div className="w-4.5 h-7 border-2 border-primary-dark rounded-[9px] flex justify-center pt-1">
+          <div className="w-0.75 h-1.25 bg-primary rounded-sm animate-scroll-dot" />
         </div>
       </div>
     </section>
 
+    <FadeUp delay={0.5} duration={1}>
     <div className="flex flex-col-reverse gap-4 px-8 lg:px-20 py-1 font-sans lg:flex-row lg:items-center lg:gap-10">
         <div className="flex-1">
             <p className="text-[11px] font-bold text-primary-dark tracking-[0.8px] uppercase mb-1">Conference keynote speaker</p>
@@ -61,6 +68,7 @@ export function Speakers(){
             <img src="../Picture1.png"/>
         </div>
     </div>
+    </FadeUp>
 
     <SpeakerGallery />
 

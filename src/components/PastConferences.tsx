@@ -1,3 +1,5 @@
+import { FadeUp } from "./ui/FadeUp";
+
 const HIGHLIGHTS = [
     {
       value: "60",
@@ -101,6 +103,7 @@ const HIGHLIGHTS = [
   export function PastConferences() {
     return (
       <section id="history" className="bg-bg-alt  py-24 font-sans border-t border-border-light">
+        <FadeUp delay={1} duration={0.5} >
         <div className="px-8 lg:px-20">
           {/* Section header */}
           <div className="flex items-end justify-between gap-6 mb-12 flex-wrap">
@@ -272,6 +275,7 @@ const HIGHLIGHTS = [
             </div>
           </div>
         </div>
+        </FadeUp>
       </section>
     );
   }

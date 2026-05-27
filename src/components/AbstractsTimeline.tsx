@@ -1,3 +1,4 @@
+import { FadeUp } from "./ui/FadeUp";
 import { TimelineStep } from "./ui/TimelineStep";
 
 const TIMELINE_ITEMS = [
@@ -103,6 +104,7 @@ const TIMELINE_ITEMS = [
 export function AbstractsTimeline() {
   return (
     <section id="timeline" className="bg-bg-alt py-24 font-sans">
+      <FadeUp delay={1} duration={0.5}>
       <div className="px-8 lg:px-20">
         {/* Section header */}
         <div className="text-center mb-15">
@@ -163,6 +165,7 @@ export function AbstractsTimeline() {
           </a>
         </div>
       </div>
+      </FadeUp>
     </section>
   );
 }

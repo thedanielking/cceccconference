@@ -1,3 +1,5 @@
+import { FadeUp } from "./ui/FadeUp"
+
 const SLIDES = [
     {
       id: 1,
@@ -26,6 +28,7 @@ const SLIDES = [
 export function Info(){
     return (
         <section id="theme" className="bg-white px-8 lg:px-20 py-24 font-sans overflow-hidden">
+          <FadeUp delay={1} duration={0.5}>
           <div className="text-center mb-14">
              <p className="text-[11px] font-bold text-primary tracking-widest uppercase mb-2.5">
             Conference Theme
@@ -42,6 +45,7 @@ export function Info(){
 
           <div className="grid grid-cols-1 gap-5 lg:grid-cols-3 lg:gap-8">
             {SLIDES.map((theme)=> (
+              <FadeUp delay={theme.id - 0.5} duration={1}>
                 <div key={theme.id} className="flex flex-col gap-4 hover:shadow-lg rounded overflow-hidden">
                     <img src={theme.image} alt={theme.name} />
                     <div className="lg:text-center px-3">
@@ -49,8 +53,10 @@ export function Info(){
                         <p className="text-sm leading-relaxed">{theme.description}</p>
                     </div>
                 </div>
+              </FadeUp>  
             ))}
           </div>
+          </FadeUp>
         </section>
     )
 }

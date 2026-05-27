@@ -1,9 +1,11 @@
 import { Modal } from "./Modal";
+import { FadeUp } from "./ui/FadeUp";
 
 export function Fees() {  
 
   return (
     <section id="fees" className="bg-bg-alt py-24 font-sans">
+      <FadeUp delay={1} duration={0.5} >
       <div className="px-8">
         {/* Section header */}
         <div className="text-center mb-14">
@@ -166,6 +168,7 @@ export function Fees() {
           </a>
         </p>
       </div>
+      </FadeUp>
     </section>     
 
     

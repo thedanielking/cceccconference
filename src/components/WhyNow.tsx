@@ -1,3 +1,6 @@
+// import { motion } from "motion/react";
+import { FadeUp } from "./ui/FadeUp";
+
 const CARDS = [
   {
     id: 1,
@@ -65,7 +68,9 @@ const CARDS = [
 export function WhyNow() {
   return (
     <section id="about" className="bg-white py-24 font-sans">
-      <div className="px-8 lg:px-20">
+      <FadeUp delay={1} duration={0.5}>
+        <div className="px-8 lg:px-20">
+
         {/* Section header */}
         <div className="flex flex-col items-center mb-14 flex-wrap">
           <div>
@@ -98,7 +103,8 @@ export function WhyNow() {
 
         </div>
         
-      </div>
+        </div>
+      </FadeUp>
     </section>
   );
 }

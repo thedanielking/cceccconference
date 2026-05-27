@@ -1,3 +1,6 @@
+import { Link } from "react-router";
+import { FadeUp } from "./ui/FadeUp";
+
 const VOLUME = {
     title: "NCCECC 2026 Conference Proceedings",
     volume: "Volume 1",
@@ -23,6 +26,7 @@ const VOLUME = {
   export function Proceedings() {
     return (
       <section id="publication" className="bg-white py-24 font-sans border-t border-border-light">
+        <FadeUp delay={1} duration={0.5}>
         <div className="px-8">
           {/* Section header */}
           <div className="text-center mb-12">
@@ -159,21 +163,29 @@ const VOLUME = {
                 Full proceedings available upon conference completion.
               </p>
   
-              {/* <a
-                href="#"
-                className="inline-flex items-center gap-2 bg-transparent text-primary-dark px-[22px] py-2.5 rounded-lg no-underline text-[13.5px] font-bold border-[1.5px] border-primary-dark transition-all duration-[220ms] whitespace-nowrap hover:bg-primary-dark hover:text-white hover:shadow-[0_4px_16px_rgba(21,87,36,0.2)]"
+              <Link to="/news"
+                className="inline-flex items-center gap-2 bg-transparent text-primary-dark px-5.5 py-2.5 text-[13.5px] font-bold transition-all duration-220 whitespace-nowrap hover:underline "
               >
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                  <polyline points="14 2 14 8 20 8" />
-                  <line x1="12" y1="18" x2="12" y2="12" />
-                  <line x1="9" y1="15" x2="15" y2="15" />
-                </svg>
-                Download Proceedings (PDF)
-              </a> */}
+                View more
+                <svg
+    width="16"
+    height="16"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth="2.2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="text-primary-dark"
+  >
+    <path d="M5 12h14" />
+    <path d="M13 6l6 6-6 6" />
+  </svg>                
+              </Link>
             </div>
           </div>
         </div>
+        </FadeUp>
       </section>
     );
   }
