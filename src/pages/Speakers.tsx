@@ -51,7 +51,7 @@ const SPEAKERS: SpeakerMember[] = [
   { id: 45, name: "KOUNOU Nounagnon Roméo Roger", title: "Speaker", affiliation: "National University of Agriculture of Bénin", initials: "KR",  color: "#27ae60" },
 ];
 
-export function Speakers(){
+export default function Speakers(){
     return (
         <div className="space-y-10 lg:space-y-20">
             <section
