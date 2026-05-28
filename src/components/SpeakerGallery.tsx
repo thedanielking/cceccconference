@@ -28,10 +28,10 @@ export function SpeakerGallery({SPEAKERS}: SpeakerSectionProps) {
             </span>
           </div>
           <h2 className="text-[clamp(1.8rem,3.5vw,2.8rem)] font-extrabold text-[#0d2e17] tracking-[-0.5px] mb-4 font-heading">
-            Voices of Authority
+            NCCECC Conference Speakers
           </h2>
           <p className="text-[1.05rem] text-[#5a7a62] max-w-130 mx-auto leading-[1.7]">
-            Our speakers represent Nigeria's leading academic institutions, government ministries, and development organizations.
+            Our speakers represent Sub Saharan Africa's leading academic institutions, government ministries, and development organizations.
           </p>
         </div>
 

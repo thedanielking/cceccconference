@@ -67,41 +67,32 @@ const VOLUME = {
                     <p className="text-xs text-text-muted italic mb-0">
                       {VOLUME.edition}
                     </p>
-                  </div>
-  
-                  {/* Document icon mockup */}
-                  <div className="w-18 h-22.5 bg-[#f9fafb] border-[1.5px] border-border-default rounded-lg flex flex-col items-center justify-center gap-1.5 shrink-0 relative overflow-hidden">
-                    {/* Dog-ear corner */}
-                    <div
-                      className="absolute top-0 right-0 w-4.5 h-4.5 bg-border-default"
-                      style={{ clipPath: "polygon(100% 0, 100% 100%, 0 0)" }}
-                    />
-                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d1d5db" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                      <polyline points="14 2 14 8 20 8" />
-                      <line x1="16" y1="13" x2="8" y2="13" />
-                      <line x1="16" y1="17" x2="8" y2="17" />
-                      <polyline points="10 9 9 9 8 9" />
-                    </svg>
-                    <span className="text-[9px] font-bold text-accent-red tracking-[0.5px]">
-                      PDF
-                    </span>
-                  </div>
+                  </div> 
+                  
                 </div>
+
+                {/* view more link */}
+                <Link to="/publications"
+                className="inline-flex items-center gap-2 bg-transparent text-primary-dark py-2.5 text-[13.5px] font-bold transition-all duration-220 whitespace-nowrap hover:underline "
+              >
+                View more
+                <svg
+                   width="16"
+                   height="16"
+                   fill="none"
+                   viewBox="0 0 24 24"
+                   stroke="currentColor"
+                   strokeWidth="2.2"
+                   strokeLinecap="round"
+                   strokeLinejoin="round"
+                   className="text-primary-dark"
+                >
+                  <path d="M5 12h14" />
+                  <path d="M13 6l6 6-6 6" />
+                </svg>                
+              </Link>
   
-                {/* Metadata row */}
-                <div className="flex gap-6 flex-wrap pb-5 border-b border-border-light mb-5">
-                  {METADATA.map((meta) => (
-                    <div key={meta.label}>
-                      <p className="text-[9.5px] font-bold text-text-faint tracking-[0.8px] uppercase mb-0.5">
-                        {meta.label}
-                      </p>
-                      <p className="text-xs font-semibold text-text-body">
-                        {meta.value}
-                      </p>
-                    </div>
-                  ))}
-                </div>
+                
   
                 {/* Abstract */}
                 <div className="mb-5">
@@ -113,23 +104,7 @@ const VOLUME = {
                   </p>
                 </div>
   
-                {/* Authors */}
-                <div className="mb-5 pb-5 border-b border-border-light">
-                  <p className="text-[9.5px] font-bold text-text-faint tracking-[0.8px] uppercase mb-2">
-                    Authors
-                  </p>
-                  <div className="flex gap-2 flex-wrap">
-                    {VOLUME.Authors.map((ed) => (
-                      <span
-                        key={ed}
-                        className="bg-[#f9fafb] border border-border-default rounded-md px-3 py-1 text-xs font-medium text-text-body"
-                      >
-                        {ed}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-  
+                  
                 {/* Indexed in */}
                 <div className="mb-7">
                   <p className="text-[9.5px] font-bold text-text-faint tracking-[0.8px] uppercase mb-2">
@@ -163,25 +138,7 @@ const VOLUME = {
                 Full proceedings available upon conference completion.
               </p>
   
-              <Link to="/publications"
-                className="inline-flex items-center gap-2 bg-transparent text-primary-dark px-5.5 py-2.5 text-[13.5px] font-bold transition-all duration-220 whitespace-nowrap hover:underline "
-              >
-                View more
-                <svg
-    width="16"
-    height="16"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    strokeWidth="2.2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className="text-primary-dark"
-  >
-    <path d="M5 12h14" />
-    <path d="M13 6l6 6-6 6" />
-  </svg>                
-              </Link>
+              
             </div>
           </div>
         </div>

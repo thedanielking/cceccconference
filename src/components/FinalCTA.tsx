@@ -21,7 +21,7 @@ export function FinalCTA() {
         </h2>
 
         <p className="text-base text-white/70 max-w-130 mx-auto mb-11 leading-[1.75]">
-          Join researchers, policymakers, engineers, and advocates at Nigeria's
+          Join researchers, policymakers, engineers, and advocates at Sub Saharan Africa's
           premier clean energy and climate change conference. Submit your abstract
           or register your place today.
         </p>

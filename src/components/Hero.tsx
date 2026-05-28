@@ -94,7 +94,7 @@ export function Hero() {
 
       </FadeUp>
           {/* Inline note */}
-          <p className="mt-5 text-xs text-black lg:text-text-muted flex items-center gap-1.5">
+          <p className="mt-5 text-xs text-black flex items-center gap-1.5">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#222422" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="12" cy="12" r="10" />
               <line x1="12" y1="8" x2="12" y2="12" />
@@ -106,11 +106,11 @@ export function Hero() {
       </div>
 
       {/* Scroll hint */}
-      {/* <div className="absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 opacity-50">
-        <div className="w-[18px] h-7 border-2 border-primary-dark rounded-[9px] flex justify-center pt-1">
-          <div className="w-[3px] h-[5px] bg-primary rounded-sm animate-scroll-dot" />
+      <div className="absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 opacity-50">
+        <div className="w-4.5 h-7 border-2 border-primary-dark rounded-[9px] flex justify-center pt-1">
+          <div className="w-0.75 h-1.25 bg-primary rounded-sm animate-scroll-dot" />
         </div>
-      </div> */}
+      </div>
     </section>
   );
 }

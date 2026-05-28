@@ -200,7 +200,7 @@ export default function ConferenceHistory(){
 
         <FadeUp delay={1.4} duration={1}>
             <div>
-                <img src="../pastConferenceImg2.jpg" alt="conference img" />
+                <img src="../bgconference2.jpg" alt="conference img" />
             </div>
         </FadeUp>
     </div>

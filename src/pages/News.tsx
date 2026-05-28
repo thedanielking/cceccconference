@@ -75,7 +75,7 @@ export default function News(){
         </div>
         <div className="flex-1">
             <h3 className="font-semibold text-lg lg:text-xl">Announcing the Cluster for Clean Energy and Climate Change (CCECC)!</h3>
-            <p>We are excited to announce the 1st National Conference on Clean Energy and Climate Change, organized by the Cluster for Clean Energy and Climate Change (CCECC). Scheduled for April 15-16, 2026, this groundbreaking event aims to gather researchers, practitioners, and policymakers to share insights and solutions for tackling climate change and promoting clean energy in Nigeria. With a focus on advancing local knowledge and bridging the gap between academia and industry, this conference promises to be a pivotal moment in the national dialogue on sustainable development. Engage with experts in various fields, explore innovative clean energy technologies, and contribute to meaningful discussions on climate change mitigation strategies. This is your opportunity to be part of a collective effort to shape Nigeria's energy future. We invite you to participate, submit your papers, and join us in creating impactful solutions for a climate-resilient Nigeria.</p>
+            <p>We are excited to announce the 2nd National Conference on Clean Energy and Climate Change, organized by the Cluster for Clean Energy and Climate Change (CCECC). Scheduled for April 15-16, 2027, this groundbreaking event aims to gather researchers, practitioners, and policymakers to share insights and solutions for tackling climate change and promoting clean energy in Nigeria. With a focus on advancing local knowledge and bridging the gap between academia and industry, this conference promises to be a pivotal moment in the national dialogue on sustainable development. Engage with experts in various fields, explore innovative clean energy technologies, and contribute to meaningful discussions on climate change mitigation strategies. This is your opportunity to be part of a collective effort to shape Nigeria's energy future. We invite you to participate, submit your papers, and join us in creating impactful solutions for a climate-resilient Nigeria.</p>
         </div>
        </div>
        </FadeUp>
@@ -100,6 +100,78 @@ export default function News(){
 
     </div>
     <AbstractsTimeline />
+
+
+    <div className="bg-primary-dark py-24 font-sans relative overflow-hidden">
+      {/* Decorative rings */}
+      <div className="absolute -top-25 -right-25 w-120 h-120 rounded-full border border-primary/12 pointer-events-none" />
+      <div className="absolute -top-15 -right-15 w-80 h-80 rounded-full bg-primary/6 pointer-events-none" />
+      <div className="absolute -bottom-20 -left-20 w-90 h-90 rounded-full border border-primary/8 pointer-events-none" />
+
+      <div className="px-8 relative text-center">
+        {/* Eyebrow */}
+        <div className="inline-flex items-center gap-2 bg-primary/12 border border-primary/30 rounded-md px-3.5 py-1.5 mb-7">
+          <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+          <span className="text-[11px] font-bold text-primary tracking-[0.9px] uppercase">
+            April 15–16, 2027 &nbsp;·&nbsp; Hybrid Mode
+          </span>
+        </div>
+
+        <h2 className="text-[clamp(1.9rem,4vw,3rem)] font-extrabold text-white tracking-[-0.8px] leading-[1.12] mb-4.5 font-heading max-w-165 mx-auto">
+          Ready to Take Action?{" "}
+          <span className="text-primary">The Future of Energy Starts With You.</span>
+        </h2>
+
+        <p className="text-base text-white/70 max-w-130 mx-auto mb-11 leading-[1.75]">
+          Join researchers, policymakers, engineers, and advocates at Sub Saharan Africa's
+          premier clean energy and climate change conference. Submit your abstract
+          or register your place today.
+        </p>
+
+        {/* CTA Row */}
+        <div className="flex flex-col items-center justify-center gap-3.5 flex-wrap mb-13">
+          <a
+            href="https://forms.gle/KUhw72qfdKKXmcuc9"
+            className="inline-flex items-center gap-2 bg-white text-primary-dark px-8 py-4 rounded-lg no-underline text-[14.5px] font-bold shadow-[0_4px_20px_rgba(0,0,0,0.18)] transition-all duration-200 hover:bg-primary-light hover:-translate-y-0.5 hover:shadow-[0_8px_28px_rgba(0,0,0,0.22)]"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+            </svg>
+            Abstract Submission
+          </a>
+
+          <p className="flex items-center"><span className="text-3xl">👇</span> Only for accepted abstract</p>
+
+          <a
+            href="https://forms.gle/PmFbQM9umVRrNZFg9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-transparent text-white px-8 py-4 rounded-lg no-underline text-[14.5px] font-semibold border-2 border-white/35 transition-all duration-200 hover:border-primary hover:text-primary hover:-translate-y-0.5"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+            </svg>
+            Full paper Submission
+          </a>
+        </div>
+
+        {/* Trust strip */}
+        <div className="flex justify-center items-center gap-8 flex-wrap pt-8 border-t border-white/8">
+          {[
+            { icon: "🎓", label: "Open to Researchers & Students" },
+            { icon: "🌍", label: "Sub-Saharan Africa Focus" },
+            { icon: "📄", label: "Post-Conference Publication Support" },
+          ].map((item) => (
+            <div key={item.label} className="flex items-center gap-2 text-white/55 text-[13px] font-medium">
+              <span className="text-[17px]">{item.icon}</span>
+              {item.label}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
 
     </div>
     )

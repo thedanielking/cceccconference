@@ -8,6 +8,7 @@ export interface SpeakerMember {
     avatar?: string;
     institution?: string;
     color: string; 
+    isAvailable?: boolean;
   }
   
   interface SpeakerCardProps {
@@ -16,7 +17,8 @@ export interface SpeakerMember {
 
 export function SpeakerCard({ speaker }: SpeakerCardProps) {
     return (
-      <div className="bg-white border border-primary-faint rounded-2xl p-7 px-6 text-center transition-all duration-250 cursor-default hover:-translate-y-1.25 hover:shadow-[0_12px_36px_rgba(21,87,36,0.1)] hover:border-primary">
+      <>
+      {speaker.isAvailable ? <div className="bg-white border border-primary-faint rounded-2xl p-7 px-6 text-center transition-all duration-250 cursor-default hover:-translate-y-1.25 hover:shadow-[0_12px_36px_rgba(21,87,36,0.1)] hover:border-primary">
         {/* Avatar */}
         <div
           className="w-20 h-20 overflow-hidden rounded-full mx-auto mb-4 flex items-center justify-center text-[1.3rem] font-bold text-white font-heading border-[3px]"
@@ -45,5 +47,12 @@ export function SpeakerCard({ speaker }: SpeakerCardProps) {
         }
         
       </div>
+      : (
+        <div className="bg-text-main border border-primary-faint rounded-2xl py-14 px-6 text-center transition-all duration-250 cursor-default hover:-translate-y-1.25 hover:shadow-[0_12px_36px_rgba(21,87,36,0.1)] hover:border-primary">
+           <p className="text-3xl lg:text-6xl text-white">?</p>
+        </div>
+      )
+      }
+      </>
     );
   }

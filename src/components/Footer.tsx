@@ -96,7 +96,7 @@ export function Footer() {
               </div>
               <a
                 href="mailto:editorial@cceccconferences.com"
-                className="flex items-center gap-1.5 text-xs text-primary no-underline break-all hover:underline"
+                className="flex flex-col lg:flex-row lg:items-center gap-1.5 text-xs text-primary no-underline break-all hover:underline"
               >
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
