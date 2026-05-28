@@ -25,7 +25,7 @@ const VOLUME = {
   
   export function Proceedings() {
     return (
-      <section id="publication" className="bg-white py-24 font-sans border-t border-border-light">
+      <section id="publication" className="bg-bg-alt py-24 font-sans border-t border-border-light">
         <FadeUp delay={1} duration={0.5}>
         <div className="px-8">
           {/* Section header */}
@@ -163,7 +163,7 @@ const VOLUME = {
                 Full proceedings available upon conference completion.
               </p>
   
-              <Link to="/news"
+              <Link to="/publications"
                 className="inline-flex items-center gap-2 bg-transparent text-primary-dark px-5.5 py-2.5 text-[13.5px] font-bold transition-all duration-220 whitespace-nowrap hover:underline "
               >
                 View more

@@ -103,7 +103,7 @@ const TIMELINE_ITEMS = [
 
 export function AbstractsTimeline() {
   return (
-    <section id="timeline" className="bg-bg-alt py-24 font-sans">
+    <section id="timeline" className="bg-white py-24 font-sans">
       <FadeUp delay={1} duration={0.5}>
       <div className="px-8 lg:px-20">
         {/* Section header */}

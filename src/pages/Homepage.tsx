@@ -14,10 +14,10 @@ export default function Homepage() {
           <Hero />
           <WhyNow />
           <Info />
+          <ActionPillars />
           <PastConferences />
           <Proceedings />
           <AbstractsTimeline />
-          <ActionPillars />
           <Fees />
           <FinalCTA />
         </div>  

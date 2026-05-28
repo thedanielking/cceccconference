@@ -146,7 +146,7 @@ export function ActionPillars() {
   const extendedSlides = [SLIDES[total - 1], ...SLIDES, SLIDES[0]];
 
   return (
-    <section id="pillars" className="bg-white py-24 font-sans overflow-hidden">
+    <section id="pillars" className="bg-bg-alt py-24 font-sans overflow-hidden">
       <FadeUp delay={1} duration={0.5}>
       <div className="px-8 lg:px-20">
         {/* Section header */}

@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { FadeUp } from "./ui/FadeUp";
 
 const HIGHLIGHTS = [
@@ -102,7 +103,7 @@ const HIGHLIGHTS = [
   
   export function PastConferences() {
     return (
-      <section id="history" className="bg-bg-alt  py-24 font-sans border-t border-border-light">
+      <section id="history" className="bg-white  py-24 font-sans border-t border-border-light">
         <FadeUp delay={1} duration={0.5} >
         <div className="px-8 lg:px-20">
           {/* Section header */}
@@ -202,15 +203,14 @@ const HIGHLIGHTS = [
                 <span className="text-xs text-white/35">
                   View previous edition
                 </span>
-                {/* <a
-                  href="#"
+                <Link to="/pastConferences"
                   className="inline-flex items-center gap-1.5 text-[12.5px] font-semibold text-primary no-underline transition-all duration-200 hover:gap-2.5"
                 >
                   Conference Archive
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <polyline points="9 18 15 12 9 6" />
                   </svg>
-                </a> */}
+                </Link>
               </div>
             </div>
   
@@ -219,7 +219,7 @@ const HIGHLIGHTS = [
               {/* Stats 2×2 grid */}
               <div className="grid grid-cols-2 gap-3.5">
                 {HIGHLIGHTS.map((h, i) => (
-                  <div
+                  <Link to="/pastConferences"
                     key={i}
                     className={`rounded-lg p-6 px-5 flex flex-col gap-2.5 transition-all duration-220 hover:-translate-y-0.75 hover:border-primary hover:bg-primary-light hover:shadow-[0_8px_24px_rgba(21,87,36,0.1)] bg-white border border-border-default`}
                   >
@@ -238,7 +238,7 @@ const HIGHLIGHTS = [
                         {h.sub}
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 ))}
               </div>
   

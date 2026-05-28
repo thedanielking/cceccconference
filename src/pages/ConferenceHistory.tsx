@@ -1,9 +1,8 @@
-import { SpeakerMember } from "../components/SpeakerCard";
-import { SpeakerGallery } from "../components/SpeakerGallery";
 import { FadeUp } from "../components/ui/FadeUp";
-
-
-// this is the framework
+import { ActionPillars } from "../components/ActionPillars";
+import { SpeakerGallery } from "../components/SpeakerGallery";
+import { SpeakerMember } from "../components/SpeakerCard";
+  
 const SPEAKERS: SpeakerMember[] = [
   { id: 2, name: "Vincent Anayochukwu Ani", title: "Speaker", affiliation: "", initials: "VA", avatar: "../Picture2.png", institution: "../logo1.png", color: "#2ECC71" },
   { id: 3, name: "Ozioko Anthonia Taiwo", title: "Speaker", affiliation: "", initials: "OT", avatar: "../Picture6.png", institution: "../logo1.png", color: "#1a8a4a" },
@@ -51,15 +50,47 @@ const SPEAKERS: SpeakerMember[] = [
   { id: 45, name: "KOUNOU Nounagnon Roméo Roger", title: "Speaker", affiliation: "National University of Agriculture of Bénin", initials: "KR",  color: "#27ae60" },
 ];
 
-export function Speakers(){
+  const INFO_ROWS = [
+    {
+      icon: (
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2ECC71" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+          <line x1="16" y1="2" x2="16" y2="6" />
+          <line x1="8" y1="2" x2="8" y2="6" />
+          <line x1="3" y1="10" x2="21" y2="10" />
+        </svg>
+      ),
+      value: "15th–16th April 2026",
+    },
+    {
+      icon: (
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2ECC71" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+          <circle cx="12" cy="10" r="3" />
+        </svg>
+      ),
+      value: "Bowen University · Online Mode",
+    },
+    {
+      icon: (
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2ECC71" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <line x1="2" y1="12" x2="22" y2="12" />
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+        </svg>
+      ),
+      value: "Hybrid — International Reach",
+    },
+  ];
+
+export default function ConferenceHistory(){
     return (
         <div className="space-y-10 lg:space-y-20">
-            <section
-      id="home"
+       <section      
       className="relative w-full h-90 flex items-center overflow-hidden font-sans"
     >
       {/* Background Image */}
-      <div className="absolute inset-0 bg-[url('../bgSpeakers.jpg')] bg-cover bg-position-[center_40%] bg-no-repeat" />
+      <div className="absolute inset-0 bg-[url('../pastConferenceImg1.jpg')] bg-cover bg-position-[center_40%] bg-no-repeat" />
 
       {/* Layered overlay */}
       <div
@@ -81,13 +112,13 @@ export function Speakers(){
           {/* Main headline */}
           <FadeUp delay={0.3} >
           <h1 className="text-[clamp(1.9rem,4vw,3.1rem)] font-extrabold text-text-main leading-[1.13] tracking-[-0.8px] mb-4.5 font-heading ">             
-             Conference{" "}
-            <span className="text-primary-dark">Speakers</span>
+             Past{" "}
+            <span className="text-primary-dark">Conferences</span>
           </h1> 
           </FadeUp>
 
           <FadeUp delay={0.5}>
-          <p className="italic">Let's talk about the future</p>     
+          <p className="italic">Take a look at previous editions...</p>     
           </FadeUp>
 
           
@@ -95,34 +126,91 @@ export function Speakers(){
       </div>
 
       {/* Scroll hint */}
-      <div className="absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 opacity-50">
+      <div className="absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 opacity-50 ">
         <div className="w-4.5 h-7 border-2 border-primary-dark rounded-[9px] flex justify-center pt-1">
           <div className="w-0.75 h-1.25 bg-primary rounded-sm animate-scroll-dot" />
         </div>
       </div>
     </section>
 
-    <FadeUp delay={0.5} duration={1}>
-    <div className="flex flex-col-reverse gap-4 px-8 lg:px-20 py-1 font-sans lg:flex-row lg:items-center lg:gap-10">
-        <div className="flex-1">
-            <p className="text-[11px] font-bold text-primary-dark tracking-[0.8px] uppercase mb-1">Conference keynote speaker</p>
-            <div>
-                <h2>Prof M.O. Daramola</h2>
-                <p className="text-sm -mt-1">University of Pretoria, Pretoria, South Africa</p>
-            </div>
-            <p>
-            Prof Daramola is a professor and Head of the Department of Chemical Engineering at the University of Pretoria. He is a global scholar with over 20 years of experiences in teaching, research, administration and management in academia. He is a Chartered Engineer (CEng) with Engineering Council of UK, a Fellow of Institution of Chemical Engineers UK (FIChemE), a Member of Academy of Science of South Africa (MASSAF), a Fellow of South African Institution of Chemical Engineers (FSAIChE) and a COREN-registered Engineer in Nigeria. Prof Daramola conducts sustainable chemical engineering research producing solutions for enhancing sustainable energy and environment. He is amongst the world's Top 2% scientists (Stanford and Elsevier’s list). Prof Daramola conducts sustainable chemical engineering research producing solutions for enhancing sustainable energy and environment. To-date, Prof Daramola has trained 78 postgraduate students (33 doctorate and 45 master’s and more than 25 early career researchers (22 postdoctoral fellows as capacity development in the field)). In addition, he contributed in excess of 300 scientific publications (more than 250 journal articles, one granted patent, seventeen book chapters, and three edited books) with 8977 citations and H-index of 48 (GoogleScholar), as knowledge contributions to the field.
-            </p>
-        </div>
-        <div className="flex-1">
-            <img src="../Picture1.png"/>
-        </div>
-    </div>
-    </FadeUp>
+    <div className="grid grid-cols-2 gap-7 items-center max-[860px]:grid-cols-1 px-8 lg:px-20">
+        {/* left side */}
+        <FadeUp delay={0.8} duration={0.6}>
+            <div className="rounded-[18px] overflow-hidden relative"> 
 
+            <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  backgroundImage: `linear-gradient(rgba(46,204,113,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(46,204,113,0.06) .8px, transparent 1px)`,
+                  backgroundSize: "32px 32px",
+                }}
+              /> 
+                        
+  
+              <div className="relative pt-10 pb-9">
+                {/* Status + edition badge */}
+                <div className="flex items-center gap-2.5 mb-8">
+                  <div className="flex items-center gap-1.5 bg-primary/12 border border-primary/25 rounded-full px-3 py-1.25">
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    <span className="text-[10.5px] font-bold text-primary tracking-[0.8px] uppercase">
+                      Completed
+                    </span>
+                  </div>
+                  <span className="text-[10.5px] font-semibold /30 tracking-[0.8px] uppercase">
+                    1st Edition
+                  </span>
+                </div>
+  
+                {/* Conference code */}
+                <div className="text-[clamp(2.4rem,5vw,3.6rem)] font-black  font-heading tracking-[-1.5px] leading-none mb-2">
+                  NCCECC
+                  <span className="text-primary">-2026</span>
+                </div>
+
+                {/* Theme tag row */}
+              <div className="bg-bg-alt border border-border-default rounded-lg p-5 px-5">
+                <p className="text-[10px] font-bold text-text-faint tracking-[1px] uppercase mb-3">
+                  2026 Conference Theme
+                </p>
+                <p className="text-[13px] text-text-body italic leading-relaxed m-0 border-l-[3px] border-l-primary pl-3">
+                  "Advancing Clean Energy Solutions for Climate-Resilient and Sustainable Development in Sub-Saharan Africa"
+                </p>
+              </div>
+  
+                {/* Key info rows */}
+                {INFO_ROWS.map((row, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center gap-3 py-2.75 border-t border-white/6"
+                  >
+                    <div className="w-7.5 h-7.5 rounded-md bg-primary/10 flex items-center justify-center shrink-0">
+                      {row.icon}
+                    </div>
+                    <span className="text-xs /75 font-medium">
+                      {row.value}
+                    </span>
+                  </div>
+                ))}
+              </div>  
+              
+            </div>
+        </FadeUp>
+
+            {/* right side */}
+
+        <FadeUp delay={1.4} duration={1}>
+            <div>
+                <img src="../pastConferenceImg2.jpg" alt="conference img" />
+            </div>
+        </FadeUp>
+    </div>
+
+    <ActionPillars />
     <SpeakerGallery SPEAKERS={SPEAKERS} />
 
+    <div>
 
+    </div>
         </div>
     )
 }

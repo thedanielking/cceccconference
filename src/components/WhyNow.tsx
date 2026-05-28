@@ -1,4 +1,5 @@
 // import { motion } from "motion/react";
+import ConferenceCommittee from "./ConferenceCommittee";
 import { FadeUp } from "./ui/FadeUp";
 
 const CARDS = [
@@ -67,6 +68,7 @@ const CARDS = [
 
 export function WhyNow() {
   return (
+    <>
     <section id="about" className="bg-white py-24 font-sans">
       <FadeUp delay={1} duration={0.5}>
         <div className="px-8 lg:px-20">
@@ -106,5 +108,7 @@ export function WhyNow() {
         </div>
       </FadeUp>
     </section>
+    <ConferenceCommittee />
+    </>
   );
 }

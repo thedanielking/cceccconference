@@ -10,8 +10,7 @@ const NAV_LINKS = [
   { label: "Conference History", href: "#history" },
   { label: "Publications", href: "#publication" },
   { label: "Speakers", href: "/speakers" },
-  { label: "News", href: "/news" },
-  { label: "Contact", href: "#contact" },
+  { label: "Call for Paper", href: "/news" },
 ];
 
 export function Header() {
@@ -105,12 +104,10 @@ export function Header() {
 
         <div className="hidden min-[900px]:flex items-center gap-2.5">
           <a
-            href="https://forms.gle/p8GGUnL6QCdrogsi8"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contact"
             className="text-primary-dark ring ring-primary-dark px-4 py-2 rounded-sm no-underline text-sm font-semibold whitespace-nowrap transition-all duration-200 hover:bg-primary-light"
           >
-            Submit Abstract
+            Contact
           </a>
 
           <a

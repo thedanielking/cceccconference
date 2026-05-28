@@ -89,8 +89,10 @@ export function Footer() {
               <p className="text-[10px] font-bold text-primary tracking-[0.9px] uppercase mb-2.5">
                 Conference Contact
               </p>
-              <div className="text-sm font-semibold text-white/85 mb-1">
-                Prof. Moses Emetere
+              <div className="text-sm font-semibold text-white/85 mb-1 space-y-0.5">
+                <p>Prof. Moses Emetere</p>
+                <p className="text-xs text-white/50">Coordinator</p>
+                <p className="text-xs text-white/50">Cluster for Clean Energy and Climate Change</p>
               </div>
               <a
                 href="mailto:editorial@cceccconferences.com"
@@ -102,6 +104,7 @@ export function Footer() {
                 </svg>
                 editorial@cceccconferences.com
               </a>
+              <p className="text-xs italic text-primary">+2348035267598</p>
             </div>
 
             {/* Social */}

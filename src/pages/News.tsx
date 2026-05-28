@@ -1,3 +1,4 @@
+import { AbstractsTimeline } from "../components/AbstractsTimeline";
 import { Fees } from "../components/Fees";
 import { FadeUp } from "../components/ui/FadeUp";
 
@@ -93,43 +94,12 @@ export function News(){
        </div>
        </FadeUp>
 
-       {/* Context note + CTA */}
-       <div id="timeline" className="max-w-170 mx-auto text-center">
-          <div className="bg-white border border-border-default border-l-4 border-l-primary rounded-r-[10px] px-5.5 py-4.5 mb-8 text-left">
-            <p className="text-[0.87rem] text-text-light leading-[1.7] m-0">
-              <strong className="text-primary-dark">Timeline:</strong>{" "}
-              October 15, 2026: First round of abstracts submission;December 01, 2026: Notification of abstract acceptance;December 02, 2026: Second round of abstracts/ submission;January 02, 2026: Acceptance of second round of abstracts;
-            </p>
-          </div>
-
-          <a
-            href="https://forms.gle/p8GGUnL6QCdrogsi8"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 bg-primary-dark text-white px-7.5 py-3.5 rounded-lg no-underline text-[14.5px] font-bold shadow-[0_4px_18px_rgba(21,87,36,0.22)] transition-all duration-200 hover:bg-[#0f3d1a] hover:-translate-y-0.5 hover:shadow-[0_8px_26px_rgba(21,87,36,0.3)]"
-          >
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-              <polyline points="14 2 14 8 20 8" />
-              <line x1="16" y1="13" x2="8" y2="13" />
-              <line x1="16" y1="17" x2="8" y2="17" />
-              <polyline points="10 9 9 9 8 9" />
-            </svg>
-            Go to Google Form Submission
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-              <polyline points="15 3 21 3 21 9" />
-              <line x1="10" y1="14" x2="21" y2="3" />
-            </svg>
-          </a>
-        </div>
-
-        <Fees />
-
+       {/* timeline */}
        
     </div>
 
     </div>
+    <AbstractsTimeline />
 
     </div>
     )
