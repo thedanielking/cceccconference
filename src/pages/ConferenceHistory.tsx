@@ -4,6 +4,7 @@ import { SpeakerGallery } from "../components/SpeakerGallery";
 import { SpeakerMember } from "../components/SpeakerCard";
   
 const SPEAKERS: SpeakerMember[] = [
+  { id: 1, name: "Prof M.O. Daramola", title: "Keynote Speaker", avatar: "../Picture1.png", affiliation: "University of Pretoria, Pretoria, South Africa", initials: "MO",  color: "#1a8a4a", isAvailable: true },
   { id: 2, name: "Vincent Anayochukwu Ani", title: "Speaker", affiliation: "", initials: "VA", avatar: "../Picture2.png", institution: "../logo1.png", color: "#1a8a4a", isAvailable: true },
   { id: 3, name: "Ozioko Anthonia Taiwo", title: "Speaker", affiliation: "", initials: "OT", avatar: "../Picture6.png", institution: "../logo1.png", color: "#1a8a4a", isAvailable: true },
   { id: 4, name: "Elizabeth Oses Amuta", title: "Speaker", affiliation: "", initials: "EA", avatar: "../Picture7.jpg", institution: "../logo3.png", color: "#1a8a4a", isAvailable: true },
