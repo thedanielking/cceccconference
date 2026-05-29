@@ -219,7 +219,7 @@ const HIGHLIGHTS = [
               {/* Stats 2×2 grid */}
               <div className="grid grid-cols-2 gap-3.5">
                 {HIGHLIGHTS.map((h, i) => (
-                  <Link to="/pastConferences"
+                  <Link to="/pastConferences#speakers"
                     key={i}
                     className={`rounded-lg p-6 px-5 flex flex-col gap-2.5 transition-all duration-220 hover:-translate-y-0.75 hover:border-primary hover:bg-primary-light hover:shadow-[0_8px_24px_rgba(21,87,36,0.1)] bg-white border border-border-default`}
                   >
