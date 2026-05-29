@@ -104,7 +104,7 @@ export default function Speakers(){
     </section>
 
     <FadeUp delay={0.5} duration={1}>
-    <div className="flex flex-col-reverse gap-4 px-8 lg:px-20 py-1 font-sans lg:flex-row-reverse lg:items-center lg:gap-10">
+    <div className="flex flex-col-reverse gap-4 px-8 lg:px-20 py-1 font-sans lg:flex-row-reverse items-center lg:gap-10">
         {isAvailable ? <div className="flex-1">
             <p className="text-[11px] font-bold text-primary-dark tracking-[0.8px] uppercase mb-1">Conference keynote speaker</p>
             <div>

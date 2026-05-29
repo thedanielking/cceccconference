@@ -32,8 +32,7 @@ export default function PublicationList({publication}: PublicationProps){
 
            <div>
               {/* Document icon mockup */}
-              <div className="w-18 h-22.5 bg-white border-[1.5px] border-border-default rounded-lg lg:flex flex-col items-center justify-center gap-1.5 shrink-0 relative overflow-hidden hidden">
-                    {/* Dog-ear corner */}
+              {/* <div className="w-18 h-22.5 bg-white border-[1.5px] border-border-default rounded-lg lg:flex flex-col items-center justify-center gap-1.5 shrink-0 relative overflow-hidden hidden">
                     <div
                       className="absolute top-0 right-0 w-4.5 h-4.5 bg-border-default"
                       style={{ clipPath: "polygon(100% 0, 100% 100%, 0 0)" }}
@@ -48,7 +47,7 @@ export default function PublicationList({publication}: PublicationProps){
                     <span className="text-[9px] font-bold text-accent-red tracking-[0.5px]">
                       PDF
                     </span>
-                  </div>
+                  </div> */}
            </div>
 
         </div>

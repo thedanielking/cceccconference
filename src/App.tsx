@@ -6,10 +6,12 @@ import News from "./pages/News";
 import Speakers from "./pages/Speakers";
 import ConferenceHistory from "./pages/ConferenceHistory";
 import Publications from "./pages/Publications";
+import ScrollToTop from "./components/ScrollToTop";
 
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <ScrollToHash />
       <Routes>
         <Route element={<AppLayout />}>

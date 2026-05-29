@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { FadeUp } from "./ui/FadeUp";
+import PublicationList, { PublicationItem } from "./PublicationList";
 
 const VOLUME = {
     title: "NCCECC 2026 Conference Proceedings",
@@ -16,14 +17,19 @@ const VOLUME = {
   };
   
   const INDEX_TAGS = ["Google Scholar", "Scopus (Pending)", "African Journals Online", "Open Access"];
-  
-  const METADATA = [
-    { label: "Published", value: VOLUME.publishedDate },
-    { label: "Pages", value: VOLUME.pages },
-    { label: "DOI", value: VOLUME.doi },
-  ];
+
   
   export function Proceedings() {
+    const publications: PublicationItem[] = [
+      { id: 1, title: "Design of a solar-powered water pumping system for sustainable irrigation in rural communities", Author: "Ani et al", Page: "1-9" },
+      { id: 2, title: "Towards the development of a deep learning based security solution for electric vehicle charging", Author: "Osa et al", Page: "10-23" },
+      { id: 3, title: "Advances in sustainable energy technologies towards net-zero emissions in maritime operations", Author: "Adumene et al", Page: "24-31" },
+      { id: 4, title: "Buoyancy-driven heat transfer enhancement in a hexagonal cavity using an optimized MgO–CuO–SiC hybrid nanofluid", Author: "Olabemiwo & Okekunle", Page: "32-41" },
+      { id: 5, title: "Climate modeling of flood frequency and intensity in bayelsa state using the SWAT model for climate change adaptation", Author: "Ijaola et al", Page: "42-53" },
+      { id: 6, title: "Contribution of the national centre for agriculural mechanization to clean energy production in Nigeria through agricultural and animal wastes", Author: "Ademuluyi", Page: "54-69" },
+      { id: 7, title: "Rethinking clean energy utilisation for climate change mitigation and sustainable development in Nigeria: The imperative of community inclusion, mass education and public policy initiatives", Author: "Lamidi", Page: "70-90" },
+  ]
+
     return (
       <section id="publication" className="bg-bg-alt py-24 font-sans border-t border-border-light">
         <FadeUp delay={1} duration={0.5}>
@@ -71,28 +77,12 @@ const VOLUME = {
                   
                 </div>
 
-                {/* view more link */}
-                <Link to="/publications"
-                className="inline-flex items-center gap-2 bg-transparent text-primary-dark py-2.5 text-[13.5px] font-bold transition-all duration-220 whitespace-nowrap hover:underline "
-              >
-                View more
-                <svg
-                   width="16"
-                   height="16"
-                   fill="none"
-                   viewBox="0 0 24 24"
-                   stroke="currentColor"
-                   strokeWidth="2.2"
-                   strokeLinecap="round"
-                   strokeLinejoin="round"
-                   className="text-primary-dark"
-                >
-                  <path d="M5 12h14" />
-                  <path d="M13 6l6 6-6 6" />
-                </svg>                
-              </Link>
-  
-                
+                <div className="space-y-4 py-3">
+                  {publications.map((publication)=> (
+                    <PublicationList key={publication.id} publication={publication} />
+                  ))}
+
+                </div>                
   
                 {/* Abstract */}
                 <div className="mb-5">
