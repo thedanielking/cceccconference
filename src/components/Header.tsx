@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router";
 import { MenuIcon } from "./ui/MenuIcon";
 import { XIcon } from "./ui/XIcon";
-import { Link, useLocation, useNavigate } from "react-router";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },

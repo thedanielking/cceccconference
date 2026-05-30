@@ -264,9 +264,6 @@ const HIGHLIGHTS = [
                       title={p.name}
                       className="h-16 bg-[#f9fafb] overflow-hidden border-[1.5px] border-dashed border-border-default rounded-lg flex flex-col items-center justify-center gap-0.75 transition-all duration-200 hover:border-primary hover:bg-primary-light hover:border-solid cursor-default"
                     >
-                      {/* <span className="text-[13px] font-extrabold text-[#cbd5e1] font-heading tracking-[0.3px]">
-                        {p.abbr}
-                      </span> */}
                       <img src={p.logo} alt={p.abbr} />
                     </div>
                   ))}

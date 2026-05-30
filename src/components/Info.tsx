@@ -36,11 +36,6 @@ export function Info(){
             <h2 className="text-[clamp(1.7rem,3vw,2.5rem)] font-extrabold text-text-main tracking-[-0.5px] mb-3.5 font-heading capitalize">
             Advancing Clean Energy Solutions for Climate-Resilient and Sustainable Development in Sub-Saharan Africa
             </h2>
-            {/* <p className="text-[0.93rem] text-text-muted max-w-125 mx-auto leading-[1.7]">
-            The conference is structured around seven interconnected sub-themes,
-            each addressing a critical dimension of clean energy and climate
-            action in Sub-Saharan Africa.
-            </p> */}
           </div>
 
           <div className="grid grid-cols-1 gap-5 lg:grid-cols-3 lg:gap-8">

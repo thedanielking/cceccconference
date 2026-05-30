@@ -1,5 +1,4 @@
 import { AbstractsTimeline } from "../components/AbstractsTimeline";
-import { Fees } from "../components/Fees";
 import { FadeUp } from "../components/ui/FadeUp";
 
 export default function News(){

@@ -86,19 +86,6 @@ const TIMELINE_ITEMS = [
     bg: "#f0f9ff",
     border: "#bae6fd",
   },
-  // {
-  //   id: 5,
-  //   date: "Apr. 15–16, 2027",
-  //   label: "Conference Day",
-  //   description:
-  //     "Present your work at the 2nd National Conference on Clean Energy and Climate Change. Hybrid format — in-person and virtual participation.",
-  //   type: "event",
-  //   round: "Summit",
-  //   color: "#155724",
-  //   bg: "#f0fff4",
-  //   border: "#2ECC71",
-  //   isMain: true,
-  // },
 ];
 
 export function AbstractsTimeline() {

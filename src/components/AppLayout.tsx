@@ -11,7 +11,8 @@ export function AppLayout(){
         <Header/>
           <Outlet />
         <Footer/>
-        {/* Modal windows defined at app level */}
+
+        {/* Modal window */}
         <Modal.Window name="register">
           <RegistrationModal />
         </Modal.Window>

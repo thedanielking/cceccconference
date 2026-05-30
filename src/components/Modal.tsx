@@ -91,7 +91,7 @@ function Window({
   );
 }
 
-/* ───────── Attach sub-components ───────── */
+/* ───────── sub-components ───────── */
 Modal.Open = Open;
 Modal.Window = Window;
 

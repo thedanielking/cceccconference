@@ -30,24 +30,7 @@ export default function PublicationList({publication}: PublicationProps){
 
            </div>
 
-           <div>
-              {/* Document icon mockup */}
-              {/* <div className="w-18 h-22.5 bg-white border-[1.5px] border-border-default rounded-lg lg:flex flex-col items-center justify-center gap-1.5 shrink-0 relative overflow-hidden hidden">
-                    <div
-                      className="absolute top-0 right-0 w-4.5 h-4.5 bg-border-default"
-                      style={{ clipPath: "polygon(100% 0, 100% 100%, 0 0)" }}
-                    />
-                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d1d5db" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                      <polyline points="14 2 14 8 20 8" />
-                      <line x1="16" y1="13" x2="8" y2="13" />
-                      <line x1="16" y1="17" x2="8" y2="17" />
-                      <polyline points="10 9 9 9 8 9" />
-                    </svg>
-                    <span className="text-[9px] font-bold text-accent-red tracking-[0.5px]">
-                      PDF
-                    </span>
-                  </div> */}
+           <div>              
            </div>
 
         </div>
