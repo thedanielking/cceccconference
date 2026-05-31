@@ -20,13 +20,13 @@ const VOLUME = {
   
   export function Proceedings() {
     const publications: PublicationItem[] = [
-      { id: 1, title: "Design of a solar-powered water pumping system for sustainable irrigation in rural communities", Author: "Ani et al", Page: "1-9" },
-      { id: 2, title: "Towards the development of a deep learning based security solution for electric vehicle charging", Author: "Osa et al", Page: "10-23" },
-      { id: 3, title: "Advances in sustainable energy technologies towards net-zero emissions in maritime operations", Author: "Adumene et al", Page: "24-31" },
-      { id: 4, title: "Buoyancy-driven heat transfer enhancement in a hexagonal cavity using an optimized MgO–CuO–SiC hybrid nanofluid", Author: "Olabemiwo & Okekunle", Page: "32-41" },
-      { id: 5, title: "Climate modeling of flood frequency and intensity in bayelsa state using the SWAT model for climate change adaptation", Author: "Ijaola et al", Page: "42-53" },
-      { id: 6, title: "Contribution of the national centre for agriculural mechanization to clean energy production in Nigeria through agricultural and animal wastes", Author: "Ademuluyi", Page: "54-69" },
-      { id: 7, title: "Rethinking clean energy utilisation for climate change mitigation and sustainable development in Nigeria: The imperative of community inclusion, mass education and public policy initiatives", Author: "Lamidi", Page: "70-90" },
+      { id: 1, title: "Design of a solar-powered water pumping system for sustainable irrigation in rural communities", Author: "Ani et al", Page: "1-9", fileName: "Proceedings_Ani.pdf", doi: "https://doi.org/10.17605/OSF.IO/W2V3J"},
+      { id: 2, title: "Towards the development of a deep learning based security solution for electric vehicle charging", Author: "Osa et al", Page: "10-23", fileName: "Proceedings_Osa.pdf", doi: "https://doi.org/10.17605/OSF.IO/AKTFX" },
+      { id: 3, title: "Advances in sustainable energy technologies towards net-zero emissions in maritime operations", Author: "Adumene et al", Page: "24-31", fileName: "Proceedings_Adumene.pdf", doi: "https://doi.org/10.17605/OSF.IO/2PBT7" },
+      { id: 4, title: "Buoyancy-driven heat transfer enhancement in a hexagonal cavity using an optimized MgO–CuO–SiC hybrid nanofluid", Author: "Olabemiwo & Okekunle", Page: "32-41", fileName: "Proceedings_Olabemiwo.pdf", doi: "https://doi.org/10.17605/OSF.IO/MQBHY" },
+      { id: 5, title: "Climate modeling of flood frequency and intensity in bayelsa state using the SWAT model for climate change adaptation", Author: "Ijaola et al", Page: "42-53", fileName: "Proceedings_Ijaola.pdf", doi: "https://doi.org/10.17605/OSF.IO/X29CW" },
+      { id: 6, title: "Contribution of the national centre for agriculural mechanization to clean energy production in Nigeria through agricultural and animal wastes", Author: "Ademuluyi", Page: "54-69", fileName: "Proceedings_Ademuluyi.pdf", doi: "https://doi.org/10.17605/OSF.IO/HZEJN" },
+      { id: 7, title: "Rethinking clean energy utilisation for climate change mitigation and sustainable development in Nigeria: The imperative of community inclusion, mass education and public policy initiatives", Author: "Lamidi", Page: "70-90", fileName: "Proceedings_Lamidi.pdf", doi: "https://doi.org/10.17605/OSF.IO/JMY8E" },
   ]
 
     return (
