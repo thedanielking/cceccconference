@@ -39,9 +39,9 @@ export default function PublicationList({publication}: PublicationProps){
                 <p className="text-sm ">Authors: {publication.Author}</p>
                 <p className="text-sm ">Volume: 1</p>
                 <p className="text-sm ">Page: {publication.Page}</p>
-                <p className="text-xs lg:text-sm ">
+                <p className="text-sm ">
                     Doi: 
-                    <a href={publication.doi} target="_blank" className="text-sm ml-1 italic text-blue-800 hover:underline">{publication.doi}</a>
+                    <a href={publication.doi} target="_blank" className="text-xs lg:text-sm  ml-1 italic text-blue-800 hover:underline">{publication.doi}</a>
                 </p>
                 <p className="text-sm ">Published: 15th June, 2026.</p>
             </div>
